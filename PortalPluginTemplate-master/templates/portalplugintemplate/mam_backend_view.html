@@ -1,0 +1,18 @@
+{% themeextends "admin/base_admin.html" %}
+{% load i18n %}
+{% block title %}{% trans "My Plugin Message" %}: {% trans 'Title' %}{% endblock title %}
+{% block heading %}{% trans 'My Plugin Message' %}: {{ plugin_message }}{% endblock heading %}
+
+{% block content %}
+    <div class="pagecontent">
+        <h1>{% trans "Users" %}</h1>
+        <h2>{% trans "Here's the list of all registered users in the system" %}</h2>
+        {% if users %}
+	        {% for user in users %}
+	            <strong>{% trans "Real name" %}:</strong> {{ user.getName }}, <strong>{% trans "User name" %}:</strong> {{ user.getUserName }}<br>
+	        {% endfor %}
+	    {% else %}
+	       {% trans "No available users in the system" %}
+	    {% endif %}
+    </div>
+{% endblock content %}
