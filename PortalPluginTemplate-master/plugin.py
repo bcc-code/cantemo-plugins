@@ -1,6 +1,6 @@
 from portal.pluginbase.core import *
 from portal.generic.plugin_interfaces import IPluginURL, IPluginBlock,\
-    IContextProcessor, IAppRegister
+    IContextProcessor, IAppRegister, IGetMetadataFieldGroups
 from django.template import loader, Context
 
 import logging
@@ -106,3 +106,20 @@ class MyGearboxMenuPlugin(Plugin):
 
 
 MyGearboxMenuPlugin()
+
+
+class MetadataGroupOverridePlugIn(Plugin):
+    """ Override the list of MetadataField Groups for
+        display when choosing metadata groups in pages such
+        as import and create new media.
+    """
+
+    implements(IGetMetadataFieldGroups)
+
+    def __init__(self):
+        self.name = "metadata_group_override_plugin"
+
+    def __call__(self, request, metadata_groups, *args, **kwargs):
+        return ['','MYGroup']
+
+metadata_group_override_plugin = MetadataGroupOverridePlugIn()
