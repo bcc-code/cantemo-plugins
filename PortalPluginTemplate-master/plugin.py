@@ -108,35 +108,35 @@ class MyGearboxMenuPlugin(Plugin):
 MyGearboxMenuPlugin()
 
 
-class ItemContextPlugin(Plugin):
-    implements(IContextProcessor) 
+# class ItemContextPlugin(Plugin):
+#     implements(IContextProcessor) 
     
-    def __init__(self):
-        self.name = "ItemContextPlugin"
-        # Define a GUID for each plugin.
-        # Use e.g. http://www.guidgenerator.com/
-        self.plugin_guid = "7d024a0e-47ea-45b7-93b9-ae115a8ee7fa"
-        log.debug("Initiated ItemContextPlugin")
+#     def __init__(self):
+#         self.name = "ItemContextPlugin"
+#         # Define a GUID for each plugin.
+#         # Use e.g. http://www.guidgenerator.com/
+#         self.plugin_guid = "7d024a0e-47ea-45b7-93b9-ae115a8ee7fa"
+#         log.debug("Initiated ItemContextPlugin")
         
-    def __call__(self,context, class_object):
-        from portal.vidispine.vitem import ItemView
-        if isinstance(class_object, ItemView) is False:
-            return context
+#     def __call__(self,context, class_object):
+#         from portal.vidispine.vitem import ItemView
+#         if isinstance(class_object, ItemView) is False:
+#             return context
 
-        self.context = context
-        self.class_object = class_object 
-        #self.username = "test" 
-        return self.process_context()
+#         self.context = context
+#         self.class_object = class_object 
+#         #self.username = "test" 
+#         return self.process_context()
     
-    def process_context(self):
-        extra_context = self.context.dicts[len(self.context.dicts)-1]
-        # Do plugin stuff here and modify the extra_context
-        # extra_context['my_new_data_key'] = 'my new data value' 
+#     def process_context(self):
+#         extra_context = self.context.dicts[len(self.context.dicts)-1]
+#         # Do plugin stuff here and modify the extra_context
+#         # extra_context['my_new_data_key'] = 'my new data value' 
 
-        return self.context
+#         return self.context
 
 
-ItemContextPlugin()
+# ItemContextPlugin()
 
 
 # class PortalPluginTemplatePluginRegister(Plugin):
