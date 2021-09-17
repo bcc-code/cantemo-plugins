@@ -118,8 +118,12 @@ class MetadataGroupOverridePlugIn(Plugin):
 
     def __init__(self):
         self.name = "metadata_group_override_plugin"
+        log.debug("Initiated MetadataGroupOverridePlugIn")
 
     def __call__(self, request, metadata_groups, *args, **kwargs):
-        return ['','MYGroup']
+        log.debug(request)
+        log.debug(metadata_groups)
+        log.debug("Called MetadataGroupOverridePlugIn")
+        return ['']
 
 metadata_group_override_plugin = MetadataGroupOverridePlugIn()
