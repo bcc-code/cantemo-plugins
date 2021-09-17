@@ -3,8 +3,7 @@ URLS for the PortalPluginTemplate plugin
 """
 
 from django.conf.urls import url
-from .vmyplugin import (HelloWorldView, MyPluginModelsView, MyPluginModelAddView,
-                        MyPluginModelDeleteView, MyPluginModelView, MAMBackendInfoView)
+from .vmyplugin import (HelloWorldView)
 
 urlpatterns = [
     # The URL defined to a hello world
