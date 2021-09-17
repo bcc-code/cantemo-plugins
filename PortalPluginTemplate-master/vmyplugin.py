@@ -12,14 +12,14 @@ from portal.vidispine.iuser import UserHelper
 from portal.vidispine.igeneral import performVSAPICall
 log = logging.getLogger(__name__)
 
-
-# class HelloWorldView(ClassView):
-#     """
-#     Shows all the format rules
-#     """
-#     def __call__(self):
+#needed or error (HelloWorldView cant get called in plugin.py)
+class HelloWorldView(ClassView):
+    """
+    Shows all the format rules
+    """
+    def __call__(self):
                 
-#         extra_context = {'plugin_message':_("Hello World")}
-#         messages.success(self.request, message=_("Hello World message successfully sent"))
-#         log.debug("Hello World message successfully sent")
-#         return self.main(self.request, self.template, extra_context)
+        extra_context = {'plugin_message':_("Hello World")}
+        messages.success(self.request, message=_("Hello World message successfully sent"))
+        log.debug("Hello World message successfully sent")
+        return self.main(self.request, self.template, extra_context)
