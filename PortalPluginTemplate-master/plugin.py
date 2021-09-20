@@ -6,7 +6,6 @@ from django.template import loader, Context
 import logging
 log = logging.getLogger(__name__)
 
-#needed or Internal Server Error
 class MyPluginURL(Plugin):
     """
     URL Plugin that defines new URL's in the system
