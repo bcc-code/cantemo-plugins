@@ -28,25 +28,17 @@ class MyPluginURL(Plugin):
         log.debug("Initiated MyPluginURL")
 
 
-# Load the URL plugin
 MyPluginURL()
 
-#needed for GearboxMenu
-class MyGearboxMenuPlugin(Plugin):
+class ManualRuleButtonPlugin(Plugin):
     implements(IPluginBlock)
 
     def __init__(self):
-        # The name of the plugin which should match the pluginblock tag in the Portal template
-        # For instance as defined in media_view.html: {% pluginblock "MediaViewDropdown" %}
-        # This plugin is placed in the gearbox menu for the item.
         self.name = "MediaViewLeftContentBottom"
-        # Define a GUID for each plugin.
-        # Use e.g. http://www.guidgenerator.com/
         self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d1"
-        log.debug("Initiated MyGearboxMenuPlugin")
+        log.debug("Initiated ManualRuleButtonPlugin")
 
     def return_string(self, tagname, *args):
-        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/gearbox_menu.html'}
+        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html'}
 
-
-MyGearboxMenuPlugin()
+ManualRuleButtonPlugin()
