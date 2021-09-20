@@ -14,5 +14,5 @@ sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 
 echo "Done."
 echo "Stop Portal: systemctl stop portal.target"
-echo "Sync the database: root@mediabox:   /opt/cantemo/portal   python manage.py syncdb"
+echo "Sync the database: root@mediabox:   /opt/cantemo/portal   python manage.py syncdata"
 echo "Start Portal: systemctl start portal.target"
