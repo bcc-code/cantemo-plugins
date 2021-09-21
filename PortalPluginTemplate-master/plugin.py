@@ -33,7 +33,7 @@ class ManualRuleButtonPlugin(Plugin):
     implements(IPluginBlock)
 
     def __init__(self):
-        self.name = "MediaViewLeftContentBottom"
+        self.name = "MediaViewItemTechMetadataTop"
         self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d1"
         log.debug("Initiated ManualRuleButtonPlugin")
 
