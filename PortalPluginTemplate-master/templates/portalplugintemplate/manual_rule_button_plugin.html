@@ -111,7 +111,7 @@
 
 <div class="div_button" style="float: right; padding: 43px 43px 0px 43px;">
     <button id="post-btn" class="button-pink" type="button" >Integer quis</button>
-    <button class="button-yellow" onclick="location.href='https://www.wikipedia.org'" type="button" >Lorem ipsum</button>
+    <button class="button-yellow" onclick="POSTrequest()" type="button" >Lorem ipsum</button>
     <button class="button-green" onclick="location.href='https://www.wikipedia.org'" type="button" >Aenean odio</button>
     <button class="button-blue" onclick="location.href='https://www.wikipedia.org'" type="button" >Nulla posuere</button>
     <button class="button-lila" onclick="location.href='https://www.wikipedia.org'" type="button" >Donec metus</button>
@@ -120,27 +120,37 @@
 </div>
 
 <script>
-const button = document.getElementById('post-btn');
+    const button = document.getElementById('post-btn');
 
-button.addEventListener('click', async _ => {
-  try {     
-    const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
-    method: 'POST',
-    headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-    body: new URLSearchParams({
-        'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-        'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
-    })
-});
-    console.log('Completed!', response);
-  } catch(err) {
-    console.error(`Error: ${err}`);
-  }
-});
+    button.addEventListener('click', async _ => {
+    try {     
+        const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
+            method: 'POST',
+            headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+            body: new URLSearchParams({
+                'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
+            })
+        });
+        console.log('Completed!', response);
+        } catch(err) {
+        console.error(`Error: ${err}`);
+        }
+    });
 </script>
 
-
-
+<script>
+    function POSTrequest() {
+        fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
+            method: 'POST',
+            headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+            body: new URLSearchParams({
+                'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
+             })
+        });
+    }
+</script>
 
 
 <!-- fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
