@@ -2,9 +2,9 @@
 
 <script type="text/javascript">
 
-let user_groups = "{{ user_groups }}";
+let user_groups_json = String.raw`{{ user_groups|safe }}`;
 window.manualRulePluginContext = {
-    user_groups: user_groups 
+    user_groups: JSON.parse(user_groups_json)
 }
 
 </script>
