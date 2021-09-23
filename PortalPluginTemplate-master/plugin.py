@@ -30,6 +30,11 @@ class MyPluginURL(Plugin):
 
 MyPluginURL()
 
+
+def safe_serialize(obj):
+    default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"
+    return json.dumps(obj, default=default)
+
 class ManualRuleButtonPlugin(Plugin):
     implements(IPluginBlock)
 
@@ -45,7 +50,7 @@ class ManualRuleButtonPlugin(Plugin):
             'context': { 
                 'user_group': 'admin',
                 'self_json': json.dumps(vars(self)),
-                'args': json.dumps(args),
+                'args': safe_serialize(args),
             }
         }
 
