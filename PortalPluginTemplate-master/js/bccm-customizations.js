@@ -1,7 +1,15 @@
+/* 
+const pluginDiv = document.getElementById('theklasdksanjdkljasnd');
+pluginDiv.getAttribute(`data-context`)
+
+var oneOfManyButtons = document.createElement(`button`);
+oneOfManyButtons.classList = `some classes`
+
+ */
 
 console.log(`Ran this thing`)
-const button = document.getElementById('post-btn');
 
+const button = document.getElementById('post-btn');
 button.addEventListener('click', async _ => {
     try {     
         const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {

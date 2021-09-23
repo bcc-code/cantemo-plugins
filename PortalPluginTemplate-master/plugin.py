@@ -48,10 +48,9 @@ class ManualRuleButtonJsPlugin(Plugin):
 
     def __init__(self):
         self.name = "BaseJS"
-        self.plugin_guid = "03eed808-5c6b-some-88a1-0336bcf790d1"
         log.debug("Initiated ManualRuleButtonJsPlugin")
 
     def return_string(self, tagname, *args):
-        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin_js.html'}
+        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin_js.html', 'context': { 'user_group': 'admin' } }
 
 ManualRuleButtonJsPlugin()
