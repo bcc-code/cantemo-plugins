@@ -7,16 +7,17 @@ oneOfManyButtons.classList = `some classes`
 
  */
 
-import config from `/sitemedia/js/config.js`
+import config from '/sitemedia/js/config.js';
 for (var button of group.buttons) {
     // create button with button.label and trigger process_id on click
 }
-console.log(`Ran this thing`)
+console.log(`Ran this thing`) 
 function ruleButtonPlugin() {
+    // 
     console.log(`Ran this thing inside`)
     const button = document.getElementById('post-btn');
     button.addEventListener('click', async _ => {
-        try {     
+        try {
             const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
                 method: 'POST',
                 headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
