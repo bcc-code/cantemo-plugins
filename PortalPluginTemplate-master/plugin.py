@@ -38,7 +38,7 @@ class ManualRuleButtonPlugin(Plugin):
         log.debug("Initiated ManualRuleButtonPlugin")
 
     def return_string(self, tagname, *args):
-        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html'}
+        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html', 'context': { 'user_group': 'admin' } }
 
 ManualRuleButtonPlugin()
 
@@ -51,6 +51,6 @@ class ManualRuleButtonJsPlugin(Plugin):
         log.debug("Initiated ManualRuleButtonJsPlugin")
 
     def return_string(self, tagname, *args):
-        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin_js.html', 'context': { 'user_group': 'admin' } }
+        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin_js.html'}
 
 ManualRuleButtonJsPlugin()
