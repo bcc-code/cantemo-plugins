@@ -11,6 +11,7 @@ fi
 
 sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
 
 echo "Done."
 echo "Stop Portal: systemctl stop portal.target"
