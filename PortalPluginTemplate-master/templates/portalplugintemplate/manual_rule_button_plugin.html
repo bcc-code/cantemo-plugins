@@ -118,7 +118,16 @@
     <button class="button-lila" onclick="location.href='https://www.wikipedia.org'" type="button" >Donec metus</button>
     <button class="button-orange" onclick="location.href='https://www.wikipedia.org'" type="button" >Etiam sollicitudin</button>
     <button class="button-turquoise" onclick="location.href='https://www.wikipedia.org'" type="button" >Suspendisse ipsum</button>
+    <p id="demo" onclick="myFunction()">Click me.</p>
 </div>
+
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+</script>
+
 
 <script>
     const button = document.getElementById('post-btn');
@@ -153,11 +162,6 @@
     }
 </script>
 
-<form action="http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&" method="post" id="myForm">
-    <button type="submit" class="btn btn-sm btn-info" name="something"><i class="fa fa-check"></i>Submit</button>
-</form>
-
-<button type="submit" form="myForm" class="btn btn-sm btn-info" name="something"><i class="fa fa-check"></i>Submit</button>
 
 <!-- fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
     method: 'POST',
