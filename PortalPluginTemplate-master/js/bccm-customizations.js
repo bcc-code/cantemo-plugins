@@ -7,11 +7,10 @@ oneOfManyButtons.classList = `some classes`
 
  */
 
-import config from '/sitemedia/js/bccm-customizations-config.js';
-console.log(config);
-for (var button of group.buttons) {
-    // create button with button.label and trigger process_id on click
-}
+//import config from '/sitemedia/js/bccm-customizations-config.js';
+import config from '/bccm-customizations-config.js';
+
+console.log('config', config);
 console.log(`Ran this thing`) 
 function ruleButtonPlugin() {
     // 
