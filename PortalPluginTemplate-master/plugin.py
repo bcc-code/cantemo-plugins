@@ -72,11 +72,13 @@ class ManualRuleButtonJsPlugin(Plugin):
         context = args[1]
         user = context['user']
         user_groups = user.groups.values_list('name', flat = True)
+        item_id = context['item_id']
         return {
             'guid': self.plugin_guid,
             'template': 'portalplugintemplate/manual_rule_button_plugin_js.html',
             'context': {
                 'user_groups': safe_serialize(list(user_groups)),
+                'item_id': item_id,
             }
         }
 

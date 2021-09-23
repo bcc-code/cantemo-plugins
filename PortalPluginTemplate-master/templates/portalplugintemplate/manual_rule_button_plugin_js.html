@@ -3,9 +3,11 @@
 <script type="text/javascript">
 
 let user_groups_json = String.raw`{{ user_groups|safe }}`;
+let item_id = String.raw`{{ user_groups|safe }}`
 
 var manualRulePluginContext = {
-    user_groups: JSON.parse(user_groups_json)
+    user_groups: JSON.parse(user_groups_json),
+    item_id
 }
 
 </script>
