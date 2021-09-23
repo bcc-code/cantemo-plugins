@@ -10,17 +10,17 @@ oneOfManyButtons.classList = `some classes`
 //import config from '/sitemedia/js/bccm-customizations-config.js';
 import config from '/bccm-customizations-config.js';
 
+console.log(`bccm-customizations.js executing`) 
 console.log('config', config);
-console.log(`Ran this thing`) 
+console.log('context', manualRulePluginContext);
 
 function ruleButtonPlugin() {
-    
+    console.log(`RuleButtonPlugin initializing`)
+
     for (let group of manualRulePluginContext.user_groups) {
         console.log(group)
     }
 
-    // 
-    console.log(`Ran this thing inside`)
     const button = document.getElementById('post-btn');
     button.addEventListener('click', async _ => {
         try {
