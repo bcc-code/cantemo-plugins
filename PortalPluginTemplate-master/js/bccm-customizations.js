@@ -12,7 +12,13 @@ import config from '/bccm-customizations-config.js';
 
 console.log('config', config);
 console.log(`Ran this thing`) 
+
 function ruleButtonPlugin() {
+    
+    for (let group of manualRulePluginContext.user_groups) {
+        console.log(group)
+    }
+
     // 
     console.log(`Ran this thing inside`)
     const button = document.getElementById('post-btn');
