@@ -2,6 +2,7 @@ from portal.pluginbase.core import *
 from portal.generic.plugin_interfaces import IPluginURL, IPluginBlock,\
     IContextProcessor, IAppRegister, IGetMetadataFieldGroups
 from django.template import loader, Context
+from pprint import pprint
 
 import logging
 log = logging.getLogger(__name__)
@@ -35,7 +36,11 @@ class ManualRuleButtonPlugin(Plugin):
     def __init__(self):
         self.name = "MediaViewItemTechMetadataTop"
         self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d1"
-        log.debug("Initiated ManualRuleButtonPlugin")
+        log.debug("Start ManualRuleButtonPlugin debug")
+        pprint(vars(self))
+        pprint(vars(self.request))
+        pprint(vars(self.request.user))
+        log.debug("End ManualRuleButtonPlugin debug")
 
     def return_string(self, tagname, *args):
         return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html', 'context': { 'user_group': 'admin' } }

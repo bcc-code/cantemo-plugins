@@ -1,12 +1,16 @@
 /* 
 const pluginDiv = document.getElementById('theklasdksanjdkljasnd');
-pluginDiv.getAttribute(`data-context`)
+var usergroup = pluginDiv.getAttribute(`data-user-group`)
 
 var oneOfManyButtons = document.createElement(`button`);
 oneOfManyButtons.classList = `some classes`
 
  */
 
+import config from `/sitemedia/js/config.js`
+for (var button of group.buttons) {
+    // create button with button.label and trigger process_id on click
+}
 console.log(`Ran this thing`)
 function ruleButtonPlugin() {
     console.log(`Ran this thing inside`)
