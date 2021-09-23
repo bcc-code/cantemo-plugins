@@ -2,6 +2,7 @@ from portal.pluginbase.core import *
 from portal.generic.plugin_interfaces import IPluginURL, IPluginBlock,\
     IContextProcessor, IAppRegister, IGetMetadataFieldGroups
 from django.template import loader, Context
+import json
 
 import logging
 log = logging.getLogger(__name__)
@@ -38,10 +39,7 @@ class ManualRuleButtonPlugin(Plugin):
         log.debug("Init ManualRuleButtonPlugin")
 
     def return_string(self, tagname, *args):
-        logger = logging.getLogger(__name__)
-        logger.debug("return_string ManualRuleButtonPlugin")
-        logger.debug(vars(self))
-        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html', 'context': { 'user_group': 'admin' } }
+        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html', 'context': { 'user_group': 'admin', 'self_json': json.dumps(vars(self)) } }
 
 ManualRuleButtonPlugin()
 
