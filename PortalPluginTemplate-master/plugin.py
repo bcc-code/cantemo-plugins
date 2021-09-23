@@ -50,7 +50,7 @@ class ManualRuleButtonPlugin(Plugin):
             'context': { 
                 'user_group': 'admin',
                 'self_json': json.dumps(vars(self)),
-                'args': safe_serialize(args.user),
+                'args': safe_serialize(args),
                 'user': safe_serialize(list(args.request.user.groups.all())),
             }
         }
