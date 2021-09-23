@@ -35,10 +35,12 @@ class ManualRuleButtonPlugin(Plugin):
     def __init__(self):
         self.name = "MediaViewItemTechMetadataTop"
         self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d1"
+        log.debug("Init ManualRuleButtonPlugin")
 
     def return_string(self, tagname, *args):
-        log.debug("Start ManualRuleButtonPlugin debug")
-        log.debug("End ManualRuleButtonPlugin debug")
+        logger = logging.getLogger(__name__)
+        logger.debug("return_string ManualRuleButtonPlugin")
+        logger.debug(vars(self))
         return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html', 'context': { 'user_group': 'admin' } }
 
 ManualRuleButtonPlugin()
