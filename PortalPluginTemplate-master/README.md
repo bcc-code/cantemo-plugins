@@ -14,12 +14,12 @@ TODO:
 The args object on `IPluginBlock.return_str`.
 
 ```json
-[
+[ // This is a tuple
     [
         "pluginblock",
         "MediaViewItemTechMetadataTop"
     ],
-    {
+    { // This is a dict
         "item": "<<non-serializable: VSItem>>",
         "user": "<<non-serializable: SimpleLazyObject>>",
         "request": "<<non-serializable: Request>>",

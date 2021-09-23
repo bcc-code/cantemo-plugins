@@ -44,15 +44,15 @@ class ManualRuleButtonPlugin(Plugin):
         log.debug("Init ManualRuleButtonPlugin")
 
     def return_string(self, tagname, *args):
+        context = args[1]
+        user = context['user']
+        request = context['request']
         return {
             'guid': self.plugin_guid,
             'template': 'portalplugintemplate/manual_rule_button_plugin.html',
             'context': { 
                 'user_group': 'admin',
-                'self_json': json.dumps(vars(self)),
-                'args': safe_serialize(args),
-                'args.request': safe_serialize(args[1].request),
-                'user': safe_serialize(list(args[1].request.user.groups.all())),
+                'user_groups': safe_serialize(list(user.groups.all())),
             }
         }
 
