@@ -110,6 +110,7 @@
 </script>
 
 <div class="div_button" style="float: right; padding: 43px 43px 0px 43px;">
+    <input id="clickMe" type="button" value="clickme" onclick="POSTrequest();" />
     <button id="post-btn" class="button-pink" type="button" >Integer quis</button>
     <button class="button-yellow" onclick="POSTrequest()" type="button" >Lorem ipsum</button>
     <button class="button-green" onclick="location.href='https://www.wikipedia.org'" type="button" >Aenean odio</button>
@@ -152,15 +153,19 @@
     }
 </script>
 
+<form action="http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&" method="post" id="myForm">
+    <button type="submit" class="btn btn-sm btn-info" name="something"><i class="fa fa-check"></i>Submit</button>
+</form>
+
+<button type="submit" form="myForm" class="btn btn-sm btn-info" name="something"><i class="fa fa-check"></i>Submit</button>
 
 <!-- fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
     method: 'POST',
     headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
     body: new URLSearchParams({
-        'csrfmiddlewaretoken': 'k8fGZ6pvsZOWYNpd2GXEhdapIcgIbmbjIzwgHAEWND3Q7eSmRxdui6UMtUuZSjDo',
+        'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
         'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
     })
 });
 
 $("[name=csrfmiddlewaretoken]")[0].value -->
-
