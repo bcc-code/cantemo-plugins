@@ -118,30 +118,25 @@
     <button class="button-lila" onclick="location.href='https://www.wikipedia.org'" type="button" >Donec metus</button>
     <button class="button-orange" onclick="location.href='https://www.wikipedia.org'" type="button" >Etiam sollicitudin</button>
     <button class="button-turquoise" onclick="location.href='https://www.wikipedia.org'" type="button" >Suspendisse ipsum</button>
-    <p id="demo" onclick="myFunction()">Click me.</p>
-    <script>
-        function myFunction() {
-          document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-        }
-    </script>
 </div>
 
 <script>
+    console.log(`Ran this thing`)
     const button = document.getElementById('post-btn');
 
     button.addEventListener('click', async _ => {
-    try {     
-        const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
-            method: 'POST',
-            headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-            body: new URLSearchParams({
-                'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
-            })
-        });
-        console.log('Completed!', response);
+        try {     
+            const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
+                method: 'POST',
+                headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+                body: new URLSearchParams({
+                    'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                    'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
+                })
+            });
+            console.log('Completed!', response);
         } catch(err) {
-        console.error(`Error: ${err}`);
+            console.error(`Error: ${err}`);
         }
     });
 </script>
