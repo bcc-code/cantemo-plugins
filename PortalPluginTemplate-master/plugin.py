@@ -45,8 +45,7 @@ class ManualRuleButtonPlugin(Plugin):
             'context': { 
                 'user_group': 'admin',
                 'self_json': json.dumps(vars(self)),
-                'tagname': json.dumps(tagname),
-                'args': json.dumps(args),
+                'args': json.dumps(vars(args)),
             }
         }
 
