@@ -48,6 +48,7 @@ class ManualRuleButtonJsPlugin(Plugin):
 
     def __init__(self):
         self.name = "BaseJS"
+        self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d2"
         log.debug("Initiated ManualRuleButtonJsPlugin")
 
     def return_string(self, tagname, *args):
