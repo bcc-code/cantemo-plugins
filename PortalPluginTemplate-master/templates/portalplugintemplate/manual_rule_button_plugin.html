@@ -119,15 +119,12 @@
     <button class="button-orange" onclick="location.href='https://www.wikipedia.org'" type="button" >Etiam sollicitudin</button>
     <button class="button-turquoise" onclick="location.href='https://www.wikipedia.org'" type="button" >Suspendisse ipsum</button>
     <p id="demo" onclick="myFunction()">Click me.</p>
+    <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+        }
+    </script>
 </div>
-
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-}
-</script>
-
 
 <script>
     const button = document.getElementById('post-btn');
