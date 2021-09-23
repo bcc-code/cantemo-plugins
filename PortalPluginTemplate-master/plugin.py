@@ -69,6 +69,15 @@ class ManualRuleButtonJsPlugin(Plugin):
         log.debug("Initiated ManualRuleButtonJsPlugin")
 
     def return_string(self, tagname, *args):
-        return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin_js.html'}
+        context = args[1]
+        user = context['user']
+        user_groups = user.groups.values_list('name', flat = True)
+        return {
+            'guid': self.plugin_guid,
+            'template': 'portalplugintemplate/manual_rule_button_plugin_js.html',
+            'context': {
+                'user_groups': safe_serialize(list(user_groups)),
+            }
+        }
 
 ManualRuleButtonJsPlugin()
