@@ -38,7 +38,6 @@ class ManualRuleButtonPlugin(Plugin):
 
     def return_string(self, tagname, *args):
         log.debug("Start ManualRuleButtonPlugin debug")
-        log.debug(vars(self))
         log.debug("End ManualRuleButtonPlugin debug")
         return {'guid': self.plugin_guid, 'template': 'portalplugintemplate/manual_rule_button_plugin.html', 'context': { 'user_group': 'admin' } }
 
