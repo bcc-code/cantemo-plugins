@@ -44,24 +44,21 @@ console.log('context', manualRulePluginContext);
 function addManualRuleButton2() {
     for (var i = 0; i < FilterdUserGroups.length; i++) {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
+            let buttonConfig = FilterdUserGroups[i].buttons[x];
             let ManualRuleBtn = document.createElement("button");
-            ManualRuleBtn.innerHTML = FilterdUserGroups[i].buttons[x].label;
+            ManualRuleBtn.innerHTML = buttonConfig.label;
             ManualRuleBtn.type = "button";
-            ManualRuleBtn.setAttribute("class", FilterdUserGroups[i].buttons[x].buttonColour);
+            ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
             
             ManualRuleBtn.addEventListener('click', async _ => {
-
-                console.log("i is: ", i)
-                console.log("FilterdUserGroups is: ", FilterdUserGroups)
-
                 try {
                     const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
                         headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
                         body: new URLSearchParams({
                             'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                            'process_id': FilterdUserGroups[i].buttons[x].processId,
+                            'process_id': buttonConfig.processId,
                         })
                     });
                     console.log('Completed!', response);
