@@ -47,6 +47,7 @@ function addManualRuleButton() {
     document.body.insertBefore(newManualRuleButton, ManualRuleButtonDiv);
 }
 
+addManualRuleButton();
 
 
 
