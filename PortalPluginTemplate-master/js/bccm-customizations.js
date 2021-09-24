@@ -42,7 +42,9 @@ function ruleButtonPlugin() {
 function addManualRuleButton() {
     const newManualRuleButton = document.createElement("button");
     const newManualRuleButtonName = document.createTextNode("Lorem Ipsum");
-    newManualRuleButtonName.appendChild(newManualRuleButton)
+    newManualRuleButtonName.appendChild(newManualRuleButton);
+    const ManualRuleButtonDiv = documtnt.getElementById("div_manual_rule_button");
+    document.body.insertBefore(newManualRuleButton, ManualRuleButtonDiv);
 }
 
 
