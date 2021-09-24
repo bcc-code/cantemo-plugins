@@ -42,8 +42,8 @@ console.log('context', manualRulePluginContext);
 
 
 function addManualRuleButton2() {
-    for (var i = 0; i < FilterdUserGroups[i]; i++) {
-        for (var x = 0; x < FilterdUserGroups[i].buttons[x]; x++) {
+    for (var i = 0; i < FilterdUserGroups.length; i++) {
+        for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
             let ManualRuleBtn = document.createElement("button");
             ManualRuleBtn.innerHTML = FilterdUserGroups[i].buttons[x].label;
             ManualRuleBtn.type = "button";
