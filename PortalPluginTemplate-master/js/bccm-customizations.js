@@ -71,8 +71,6 @@ function filterUserGroups(userGroup) {
     } 
 }
 
-var something
-
 console.log(FilterdUserGroups);
 
 
