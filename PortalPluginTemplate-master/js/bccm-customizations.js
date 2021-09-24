@@ -74,4 +74,4 @@ console.log(FilterdUserGroups);
 
 
 // setTimeout(ruleButtonPlugin, 3000)
-// setTimeout(addManualRuleButton2, 3000)
+setTimeout(addManualRuleButton2, 3000)
