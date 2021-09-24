@@ -53,6 +53,8 @@ const generateRandomNumber = (min, max) =>  {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
+console.log(ruleButtonPlugin.userGroups.buttons.buttonColour);
 
+userGroups[0]
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)
