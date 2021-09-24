@@ -12,7 +12,7 @@ import config from '/sitemedia/js/bccm-customizations-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 console.log('config', config);
-console.log('context', manualRulePluginContext);
+    console.log('context', manualRulePluginContext);
 
 function ruleButtonPlugin() {
     console.log(`RuleButtonPlugin initializing`)
@@ -55,6 +55,14 @@ const generateRandomNumber = (min, max) =>  {
 
 console.log(config.ruleButtonPlugin.userGroups[0].buttons[0].buttonColour)
 
+
+let FilterdUserGroups = congig.ruleButtonPlugin.userGroups.filter(userGroup => console.log('context', manualRulePluginContext.user_groups));
+
+// function filterUserGroups(userGroup) {
+//     console.log('context', manualRulePluginContext.user_groups)
+// }
+
+console.log(FilterdUserGroups);
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)

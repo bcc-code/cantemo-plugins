@@ -2,7 +2,7 @@ export default {
     ruleButtonPlugin: {
         userGroups: [
             {
-                name: `editors`,
+                name: `Admin`,
                 buttons: [
                     {
                         label: `Send to BMM`,
