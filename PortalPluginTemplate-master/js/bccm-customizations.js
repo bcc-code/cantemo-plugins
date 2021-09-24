@@ -39,13 +39,6 @@ function ruleButtonPlugin() {
     });
 }
 
-function addManualRuleButton() {
-    const newManualRuleButton = document.createElement("button");
-    const newManualRuleButtonName = document.createTextNode("Lorem Ipsum");
-    newManualRuleButtonName.appendChild(newManualRuleButton);
-    const ManualRuleButtonDiv = documtnt.getElementById("div_manual_rule_button");
-    document.body.insertBefore(newManualRuleButton, ManualRuleButtonDiv);
-}
 function addManualRuleButton2() {
     let Manualrulebtn = document.createElement("button");
     Manualrulebtn.innerHTML = "Submit";
@@ -56,5 +49,4 @@ function addManualRuleButton2() {
 
 
 setTimeout(ruleButtonPlugin, 3000)
-setTimeout(addManualRuleButton, 3000)
 setTimeout(addManualRuleButton2, 3000)
