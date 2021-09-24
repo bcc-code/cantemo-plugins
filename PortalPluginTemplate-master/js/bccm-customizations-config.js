@@ -7,7 +7,7 @@ export default {
                     {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColour: `button-green`
+                        buttonColour: `button-green2`
                     },
                     {
                         label: `test1`,
