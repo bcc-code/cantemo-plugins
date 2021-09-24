@@ -52,18 +52,19 @@ function addManualRuleButton2() {
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
             
             ManualRuleBtn.addEventListener('click', async _ => {
-                try {
-                    const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
-                        method: 'POST',
-                        headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-                        body: new URLSearchParams({
-                            'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                            'process_id': buttonConfig.processId,
-                        })
-                    });
+                const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
+                    method: 'POST',
+                    headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+                    body: new URLSearchParams({
+                        'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                        'process_id': buttonConfig.processId,
+                    })
+                });
+                if (!response.ok) {
+                    console.error('Didnt succeededd!', response);
+                }
+                else {
                     console.log('Completed!', response);
-                } catch(err) {
-                    console.error(`Error: ${err}`);
                 }
             });
         } 
