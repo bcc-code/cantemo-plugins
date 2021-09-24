@@ -49,4 +49,4 @@ function filterUserGroups(userGroup) {
     } 
 }
 
-setTimeout(addManualRuleButton, 2000)
+setTimeout(addManualRuleButton, 3000)
