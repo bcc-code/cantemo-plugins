@@ -30,7 +30,7 @@ function addManualRuleButton() {
                 }
                 else {
                     console.log('Completed!', response);
-                    // show success popup with details
+                    popup()
                 }
             });
         } 
@@ -51,7 +51,7 @@ function filterUserGroups(userGroup) {
 
 //popup function
 
-function myFunction() {
+function popup() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
 }

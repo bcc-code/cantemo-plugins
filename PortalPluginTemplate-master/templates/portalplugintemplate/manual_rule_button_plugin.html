@@ -9,6 +9,7 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-pink:hover {
         background-color: #e026d036;
         border: 1px solid #e026cf;
@@ -24,6 +25,7 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-yellow:hover {
         background-color: rgba(255, 238, 1, 0.158);
         border: 1px solid #dacf3f;
@@ -39,6 +41,7 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-blue:hover {
         background-color: #4285ac3b;
         border: 1px solid #4390bc;
@@ -54,6 +57,7 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-green2:hover {
         background-color: #2ead3941;
         border: 1px solid #31ca3d;
@@ -69,11 +73,12 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-orange:hover {
         background-color: #fca31433;
         border: 1px solid #fca414;
     }
-    
+
     .button-lila {
         border: 1px solid #8844f4;
         color: #8844f4;
@@ -84,6 +89,7 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-lila:hover {
         background-color: #8844f434;
         border: 1px solid #8844f4;
@@ -99,85 +105,111 @@
         padding: 5px 10px 5px 10px;
         margin: 3px;
     }
+
     .button-turquoise:hover {
         background-color: #08dcb52f;
         border: 1px solid #08dcb4;
     }
 
+
+
+
+
+
+
+
+
+
     
+    .poppup_id {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 300px;
+        z-index: 50000;
+        height: 150px;
+        background-color: blue;
+    }
 
+    /* Popup container - can be anything you want */
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 300px;
+        z-index: 50000;
+        height: 150px;
+        background-color: blue;
+    }
 
+    /* The actual popup */
+    .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+    }
 
+    /* Popup arrow */
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
 
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
 
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
 
+        to {
+            opacity: 1;
+        }
+    }
 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
 
-
-
-
-/* Popup container - can be anything you want */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
+        to {
+            opacity: 1;
+        }
+    }
 </style>
 
 <div id="div_maual_rule_button" style="float: right; padding: 43px 43px 0px 43px;">
 
 </div>
 
-<div id="poppup_id" class="popup" style="position: fixed; top: 10px; right: 10px; width: 300px; z-index: 50000; background-color: blue;">
-
+<div id="poppup_id" class="popup">
+    <span class="popuptext" id="myPopup">1 item queued for processing!</span>
 </div>
