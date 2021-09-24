@@ -54,11 +54,14 @@ function filterUserGroups(userGroup) {
 function after4seconds() {
     var popup = document.getElementById("myPopup");
     popup.classList.remove("show");
+    popup.classList.add("remove");
+    
 }
 
 function popup() {
     var popup = document.getElementById("myPopup");
     popup.classList.add("show");
+    popup.classList.remove("remove");
     setTimeout(after4seconds, 4000);
 
 }
