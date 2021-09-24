@@ -26,11 +26,12 @@ function addManualRuleButton() {
                 });
                 if (!response.ok) {
                     console.error('Didnt succeed!', response);
+                    popup("failed", true)
                     // show failure popup with details
                 }
                 else {
                     console.log('Completed!', response);
-                    popup()
+                    popup("1 item queued for processing!", false)
                 }
             });
         } 
@@ -51,19 +52,18 @@ function filterUserGroups(userGroup) {
 
 //popup function
 
-function after4seconds() {
+function PopupAnimateOut() {
     var popup = document.getElementById("myPopup");
     popup.classList.remove("show");
     popup.classList.add("remove");
-    
 }
 
-function popup() {
+function popup(msg, isError) {
     var popup = document.getElementById("myPopup");
     popup.classList.add("show");
     popup.classList.remove("remove");
-    setTimeout(after4seconds, 4000);
-
+    setTimeout(PopupAnimateOut, 4000);
+    popup.innerHTML = msg;
 }
 
 setTimeout(addManualRuleButton, 3000)
