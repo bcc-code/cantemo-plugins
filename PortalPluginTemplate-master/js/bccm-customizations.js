@@ -65,9 +65,13 @@ function filterUserGroups(userGroup) {
     // return false if we dont want to keep this userGroup
     for (var i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
         console.log("1234manualRulePluginContext.user_groups is ", manualRulePluginContext.user_groups[i])
-        return userGroup == manualRulePluginContext.user_groups[i]
-    }
+        if (userGroup.name == manualRulePluginContext.user_groups[i] ) {
+            return true
+        }
+    } 
 }
+
+var something
 
 console.log(FilterdUserGroups);
 
