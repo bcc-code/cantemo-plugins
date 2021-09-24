@@ -55,6 +55,7 @@ const generateRandomNumber = (min, max) =>  {
 
 let test = [{type:"Fiat",model:"500",color:"white"}, {test1:"molga",test2:"milga",test3:"melga"}];
 
+console.log("start test")
 console.log(test[0]);
 
 
