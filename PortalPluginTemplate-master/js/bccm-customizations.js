@@ -39,4 +39,12 @@ function ruleButtonPlugin() {
     });
 }
 
+function addManualRuleButton() {
+    const newManualRuleButton = document.createElement("button");
+    const newManualRuleButtonName = document.createTextNode("Lorem Ipsum");
+    newManualRuleButtonName.appendChild(newManualRuleButton)
+}
+
+
+
 setTimeout(ruleButtonPlugin, 2000)
