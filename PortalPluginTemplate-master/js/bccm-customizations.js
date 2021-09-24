@@ -51,6 +51,10 @@ function addManualRuleButton2() {
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
             
             ManualRuleBtn.addEventListener('click', async _ => {
+
+                console.log("i is: ", i)
+                console.log("FilterdUserGroups is: ", FilterdUserGroups)
+
                 try {
                     const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
