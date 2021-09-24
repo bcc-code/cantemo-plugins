@@ -43,7 +43,7 @@ function addManualRuleButton2() {
     let ManualRuleBtn = document.createElement("button");
     ManualRuleBtn.innerHTML = "ButtonName";
     ManualRuleBtn.type = "button";
-    ManualRuleBtn.setAttribute("class", "button-turquoise");
+    ManualRuleBtn.setAttribute("class", ButtonColour[generateRandomNumber(0, 4)]);
     document.body.appendChild(ManualRuleBtn);
     document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn);  
 }
@@ -54,7 +54,6 @@ const generateRandomNumber = (min, max) =>  {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-console.log(generateRandomNumber(0, 4));
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)
