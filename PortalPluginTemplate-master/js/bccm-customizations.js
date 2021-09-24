@@ -46,7 +46,15 @@ function addManualRuleButton() {
     const ManualRuleButtonDiv = documtnt.getElementById("div_manual_rule_button");
     document.body.insertBefore(newManualRuleButton, ManualRuleButtonDiv);
 }
+function addManualRuleButton2() {
+    let Manualrulebtn = document.createElement("button");
+    Manualrulebtn.innerHTML = "Submit";
+    Manualrulebtn.type = "submit";
+    Manualrulebtn.name = "formBtn";
+    document.body.appendChild(Manualrulebtn);
+}
 
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton, 3000)
+setTimeout(addManualRuleButton2, 3000)
