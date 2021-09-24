@@ -40,15 +40,22 @@ function ruleButtonPlugin() {
 }
 
 function addManualRuleButton2() {
-    let Manualrulebtn = document.createElement("button");
-    Manualrulebtn.innerHTML = "Submit";
-    Manualrulebtn.type = "submit";
-    Manualrulebtn.name = "formBtn";
-    Manualrulebtn.setAttribute("class", "button-turquoise");
-    document.body.appendChild(Manualrulebtn);
-    document.getElementById("div_maual_rule_button").appendChild(Manualrulebtn);  
+    let ManualRuleBtn = document.createElement("button");
+    ManualRuleBtn.innerHTML = "ButtonName";
+    ManualRuleBtn.type = "button";
+    ManualRuleBtn.setAttribute("class", "button-turquoise");
+    document.body.appendChild(ManualRuleBtn);
+    document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn);  
 }
 
+let ButtonColour = ["button-pink", "button-yellow", "button-blue", "button-lila", "button-turquoise"]
+
+const generateRandomNumber = (min, max) =>  {
+    return Math.floor(Math.random() * (max - min) + min);
+};
+
+console.log(generateRandomNumber(0, 4));
+setTimeout(console.log(generateRandomNumber(0, 4)), 3000)
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)
