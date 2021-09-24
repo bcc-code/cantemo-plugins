@@ -64,13 +64,13 @@ function filterUserGroups(userGroup) {
     // return true if we want to keep this userGroup, which comes from the config.
     // return false if we dont want to keep this userGroup
     for (var i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
+        console.log(mmanualRulePluginContext.user_groups[i])
         return userGroup == manualRulePluginContext.user_groups[i]
     }
 }
 
 console.log(FilterdUserGroups);
-console.log('userGroup', userGroup);
-console.log('user_groups', manualRulePluginContext.user_groups);
+
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)
