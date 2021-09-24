@@ -53,10 +53,7 @@ const generateRandomNumber = (min, max) =>  {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-let test = [{type:"Fiat",model:"500",color:"white"}, {test1:"molga",test2:"milga",test3:"melga"}];
-
-console.log("start test")
-console.log(test[type]);
+console.log(config.ruleButtonPlugin.userGroups[0].buttons[0].buttonColour)
 
 
 setTimeout(ruleButtonPlugin, 3000)
