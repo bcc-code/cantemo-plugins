@@ -7,8 +7,8 @@ oneOfManyButtons.classList = `some classes`
 
  */
 
-//import config from '/sitemedia/js/bccm-customizations-config.js';
-import config from '/bccm-customizations-config.js';
+import config from '/sitemedia/js/bccm-customizations-config.js';
+//import config from '/bccm-customizations-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 console.log('config', config);
