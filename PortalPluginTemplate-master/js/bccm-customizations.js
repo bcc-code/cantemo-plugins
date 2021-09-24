@@ -53,7 +53,7 @@ function filterUserGroups(userGroup) {
 
 function after4seconds() {
     var popup = document.getElementById("myPopup");
-    popup.removeClass("show");
+    popup.classList.remove("show");
 }
 
 function popup() {
