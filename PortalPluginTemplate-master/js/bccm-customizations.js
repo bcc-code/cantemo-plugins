@@ -63,7 +63,7 @@ function filterUserGroups(userGroup) {
     console.log("manualRulePluginContext.user_groups is ", manualRulePluginContext.user_groups)
     // return true if we want to keep this userGroup, which comes from the config.
     // return false if we dont want to keep this userGroup
-    for (i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
+    for (var i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
         return userGroup == manualRulePluginContext.user_groups[i]
     }
 }
