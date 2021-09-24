@@ -61,10 +61,12 @@ function addManualRuleButton2() {
                     })
                 });
                 if (!response.ok) {
-                    console.error('Didnt succeededd!', response);
+                    console.error('Didnt succeed!', response);
+                    // show failure popup with details
                 }
                 else {
                     console.log('Completed!', response);
+                    // show success popup with details
                 }
             });
         } 

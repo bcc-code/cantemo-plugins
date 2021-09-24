@@ -1,6 +1,6 @@
 
 TODO:
-- Create buttons with javascript
+- Create buttons with javascript 
 - Get user role from cantemo
 - Get item id from cantemo
 - Create a startManualRule function which takes a process_id (`addEventListener(() => startManualRule(buttonConfig.process_id))`)
