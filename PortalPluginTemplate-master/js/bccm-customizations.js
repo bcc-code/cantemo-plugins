@@ -39,32 +39,27 @@ function ruleButtonPlugin() {
     });
 }
 
+
 function addManualRuleButton2() {
-    let ManualRuleBtn = document.createElement("button");
-    ManualRuleBtn.innerHTML = "ButtonName";
-    ManualRuleBtn.type = "button";
-    ManualRuleBtn.setAttribute("class", ButtonColour[generateRandomNumber(0, 4)]);
-    document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn);  
+    for (var i = 0; i < FilterdUserGroups[i]; i++) {
+        for (var x = 0; x < FilterdUserGroups[i].buttons[x]; x++) {
+            let ManualRuleBtn = document.createElement("button");
+            ManualRuleBtn.innerHTML = FilterdUserGroups[i].buttons[x].label;
+            ManualRuleBtn.type = "button";
+            ManualRuleBtn.setAttribute("class", FilterdUserGroups[i].buttons[x].buttonColour);
+            document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
+        } 
+    }
 }
-
-let ButtonColour = ["button-pink", "button-yellow", "button-blue", "button-lila", "button-turquoise"]
-
-const generateRandomNumber = (min, max) =>  {
-    return Math.floor(Math.random() * (max - min) + min);
-};
 
 console.log(config.ruleButtonPlugin.userGroups[0].buttons[0].buttonColour)
 
+//filters out the user groups from the config file
 
 let FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 function filterUserGroups(userGroup) {
-    console.log("userGroup is ", userGroup)
-    console.log("manualRulePluginContext.user_groups is ", manualRulePluginContext.user_groups)
-    // return true if we want to keep this userGroup, which comes from the config.
-    // return false if we dont want to keep this userGroup
     for (var i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
-        console.log("1234manualRulePluginContext.user_groups is ", manualRulePluginContext.user_groups[i])
         if (userGroup.name == manualRulePluginContext.user_groups[i] ) {
             return true
         }
@@ -72,6 +67,9 @@ function filterUserGroups(userGroup) {
 }
 
 console.log(FilterdUserGroups);
+
+
+
 
 
 setTimeout(ruleButtonPlugin, 3000)
