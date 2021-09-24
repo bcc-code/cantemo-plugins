@@ -59,9 +59,11 @@ console.log(config.ruleButtonPlugin.userGroups[0].buttons[0].buttonColour)
 let FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 function filterUserGroups(userGroup) {
+    console.log("userGroup is ", userGroup)
+    console.log("manualRulePluginContext.user_groups is ", manualRulePluginContext.user_groups)
     // return true if we want to keep this userGroup, which comes from the config.
     // return false if we dont want to keep this userGroup
-    userGroup == manualRulePluginContext.user_groups
+    return userGroup == manualRulePluginContext.user_groups
 }
 
 console.log(FilterdUserGroups);
