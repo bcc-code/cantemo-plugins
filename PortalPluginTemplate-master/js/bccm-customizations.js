@@ -44,7 +44,6 @@ function addManualRuleButton2() {
     ManualRuleBtn.innerHTML = "ButtonName";
     ManualRuleBtn.type = "button";
     ManualRuleBtn.setAttribute("class", ButtonColour[generateRandomNumber(0, 4)]);
-    document.body.appendChild(ManualRuleBtn);
     document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn);  
 }
 
