@@ -34,3 +34,5 @@ The args object on `IPluginBlock.return_str`.
     }
 ]
 ```
+
+User groups: {{user_groups}}

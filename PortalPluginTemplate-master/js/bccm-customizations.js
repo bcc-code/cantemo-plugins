@@ -47,8 +47,6 @@ function addManualRuleButton() {
     document.body.insertBefore(newManualRuleButton, ManualRuleButtonDiv);
 }
 
-addManualRuleButton();
 
-
-
-setTimeout(ruleButtonPlugin, 2000)
+setTimeout(ruleButtonPlugin, 3000)
+setTimeout(addManualRuleButton, 3000)
