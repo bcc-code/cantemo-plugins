@@ -22,23 +22,23 @@ console.log('context', manualRulePluginContext);
 //         console.log(group)
 //     }
 
-//     const button = document.getElementById('post-btn');
-//     button.addEventListener('click', async _ => {
-//         try {
-//             const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
-//                 method: 'POST',
-//                 headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-//                 body: new URLSearchParams({
-//                     'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-//                     'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
-//                 })
-//             });
-//             console.log('Completed!', response);
-//         } catch(err) {
-//             console.error(`Error: ${err}`);
-//         }
-//     });
-// }
+//      const button = document.getElementById('post-btn');
+//      button.addEventListener('click', async _ => {
+//          try {
+//              const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=VX-6&', {
+//                  method: 'POST',
+//                  headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+//                  body: new URLSearchParams({
+//                      'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+//                      'process_id': 'process_f50625b5-0c30-4364-b26e-4ec0f01db436',
+//                  })
+//              });
+//              console.log('Completed!', response);
+//          } catch(err) {
+//              console.error(`Error: ${err}`);
+//          }
+//      });
+//  }
 
 
 function addManualRuleButton2() {
@@ -49,6 +49,22 @@ function addManualRuleButton2() {
             ManualRuleBtn.type = "button";
             ManualRuleBtn.setAttribute("class", FilterdUserGroups[i].buttons[x].buttonColour);
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
+            
+            ManualRuleBtn.addEventListener('click', async _ => {
+                try {
+                    const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
+                        method: 'POST',
+                        headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+                        body: new URLSearchParams({
+                            'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                            'process_id': FilterdUserGroups[i].buttons[x].processId,
+                        })
+                    });
+                    console.log('Completed!', response);
+                } catch(err) {
+                    console.error(`Error: ${err}`);
+                }
+            });
         } 
     }
 }
