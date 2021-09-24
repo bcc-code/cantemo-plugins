@@ -44,10 +44,11 @@ function addManualRuleButton2() {
     Manualrulebtn.innerHTML = "Submit";
     Manualrulebtn.type = "submit";
     Manualrulebtn.name = "formBtn";
-    element.classList.add("button-turquoise");
+    terms.setAttribute("class", "button-turquoise");
     document.body.appendChild(Manualrulebtn);
     document.getElementById("div_maual_rule_button").appendChild(Manualrulebtn);  
 }
+
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)
