@@ -55,7 +55,6 @@ const generateRandomNumber = (min, max) =>  {
 };
 
 console.log(generateRandomNumber(0, 4));
-setTimeout(console.log(generateRandomNumber(0, 4)), 3000)
 
 setTimeout(ruleButtonPlugin, 3000)
 setTimeout(addManualRuleButton2, 3000)
