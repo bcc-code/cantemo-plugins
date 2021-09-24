@@ -44,6 +44,7 @@ function addManualRuleButton2() {
     Manualrulebtn.innerHTML = "Submit";
     Manualrulebtn.type = "submit";
     Manualrulebtn.name = "formBtn";
+    element.classList.add("button-turquoise");
     document.body.appendChild(Manualrulebtn);
     document.getElementById("div_maual_rule_button").appendChild(Manualrulebtn);  
 }
