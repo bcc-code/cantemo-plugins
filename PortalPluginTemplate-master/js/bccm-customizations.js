@@ -56,7 +56,7 @@ const generateRandomNumber = (min, max) =>  {
 console.log(config.ruleButtonPlugin.userGroups[0].buttons[0].buttonColour)
 
 
-let FilterdUserGroups = congig.ruleButtonPlugin.userGroups.filter(userGroup => console.log('context', manualRulePluginContext.user_groups));
+let FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(userGroup => console.log('context', manualRulePluginContext.user_groups));
 
 // function filterUserGroups(userGroup) {
 //     console.log('context', manualRulePluginContext.user_groups)
