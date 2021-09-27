@@ -34,7 +34,6 @@ function addManualRuleButton() {
                     popup("1 item queued for processing!", false)
                 }
             });
-            ManualRuleBtn.addEventListener('click', test2());
         } 
     }
 }
@@ -68,19 +67,6 @@ function popup(msg, isError) {
     popup.classList.remove("remove");
     setTimeout(PopupAnimateOut, 4000);
     popup.innerHTML = msg;
-}
-
-function DisableButton() {
-    ManualRuleBtn.disabeled = true;
-}
-
-function EnableButton() {
-    ManualRuleBtn.disabeled = false;
-}
-
-function test2() {
-    DisableButton();
-    setTimeout(EnableButton, 3000);
 }
 
 setTimeout(addManualRuleButton, 3000)
