@@ -53,12 +53,6 @@ function filterUserGroups(userGroup) {
 
 //popup function
 
-function PopupAnimateOut() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.remove("show");
-    popup.classList.add("remove");
-}
-
 function popup(msg, isError) {
     if (isError) {
         var popup = document.getElementById("myPopup");
@@ -75,6 +69,20 @@ function popup(msg, isError) {
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
     }
+}
+
+function PopupAnimateOut() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.remove("show");
+    popup.classList.add("remove");
+}
+
+function disableBtn() {
+    document.getElementById("TEST1234").disabled = true;
+  }
+  
+function enableBtn() {
+    document.getElementById("TEST1234").disabled = false;
 }
 
 setTimeout(addManualRuleButton, 3000);
