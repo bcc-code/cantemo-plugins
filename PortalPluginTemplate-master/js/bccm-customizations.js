@@ -15,6 +15,7 @@ function addManualRuleButton() {
             ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
             // document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
 
+
             let ManulaRuleDiv = document.createElement("div");
             let LoadingGIF = document.createElement("img");
             document.getElementById("div_maual_rule_button").appendChild(ManulaRuleDiv);
@@ -22,7 +23,7 @@ function addManualRuleButton() {
             ManulaRuleDiv.appendChild(LoadingGIF);
             ManulaRuleDiv.appendChild(LoadingGIF);
 
-            LoadingGIF.setAttribute("src", "/root/Media2/PortalPluginTemplate-master/loading.gif");
+            LoadingGIF.setAttribute("src", "/root/Media2/PortalPluginTemplate-master1234/loading.gif");
 
 
             ManualRuleBtn.onclick = function() {
