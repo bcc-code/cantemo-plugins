@@ -83,5 +83,3 @@ function PopupAnimateOut() {
 }
   
 setTimeout(addManualRuleButton, 3000);
-
-
