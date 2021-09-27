@@ -59,14 +59,14 @@ function PopupAnimateOut() {
 }
 
 function popup(msg, isError) {
-    if (isError == false) {
+    if (isError == true) {
         popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOut, 2000);
         popup.innerHTML = msg;
         popup.style.color = "ff0000"
-    } else {
+    } if (isError == false) {
     var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
@@ -75,11 +75,5 @@ function popup(msg, isError) {
         popup.style.color = "#31ca3d"
     }
 }
-
-function DisableButton() {
-    document.getElementsByClassName("button-green2").disabled = true;
-}
-
-setTimeout(DisableButton(), 5000);
 
 setTimeout(addManualRuleButton, 3000);
