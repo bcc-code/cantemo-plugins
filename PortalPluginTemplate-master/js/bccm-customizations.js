@@ -16,7 +16,7 @@ function addManualRuleButton() {
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
 
             ManualRuleBtn.onclick = function() {
-                this.innerHTML = "loading..."
+                this.innerHTML = "working..."
                 this.disabled = true;
                 let THIS = this;
                 setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
