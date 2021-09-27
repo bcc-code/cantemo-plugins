@@ -34,7 +34,7 @@ function addManualRuleButton() {
                     popup("1 item queued for processing!", false)
                 }
             });
-            ManualRuleBtn.addEventListener('click', DisableButton(), setTimeout(EnableButton(), 3000));
+            ManualRuleBtn.addEventListener('click', test2());
         } 
     }
 }
@@ -76,6 +76,11 @@ function DisableButton() {
 
 function EnableButton() {
     ManualRuleBtn.disabeled = false;
+}
+
+function test2() {
+    DisableButton();
+    setTimeout(EnableButton, 3000);
 }
 
 setTimeout(addManualRuleButton, 3000)
