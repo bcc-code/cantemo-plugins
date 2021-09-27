@@ -14,7 +14,6 @@ function addManualRuleButton() {
             ManualRuleBtn.type = "button";
             ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
-            ManualRuleBtn.addEventListener('click', ManualRuleBtn.disabled = true);
             
             ManualRuleBtn.addEventListener('click', async _ => {
                 const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
@@ -70,4 +69,7 @@ function popup(msg, isError) {
     popup.innerHTML = msg;
 }
 
-setTimeout(addManualRuleButton, 3000)
+setTimeout(document.getElementsByClassName("green-button2").disabled = true, 5000);
+
+
+setTimeout(addManualRuleButton, 3000);
