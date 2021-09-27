@@ -33,11 +33,11 @@ function addManualRuleButton() {
                 });
                 if (!response.ok) {
                     console.error('Didnt succeed!', response);
-                    popup("1 item already being processed", true)
+                    PopupAnimateIN("1 item already being processed", true)
                 }
                 else {
                     console.log('Completed!', response);
-                    popup("1 item queued for processing!", false)
+                    PopupAnimateIN("1 item queued for processing!", false)
                 }
             });
         } 
@@ -58,25 +58,25 @@ function filterUserGroups(userGroup) {
 
 //popup function
 
-function popup(msg, isError) {
+function PopupAnimateIN(msg, isError) {
     if (isError) {
         var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
-        setTimeout(PopupAnimateOut, 1500);
+        setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
     } else {
         var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
-        setTimeout(PopupAnimateOut, 1500);
+        setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
     }
 }
 
-function PopupAnimateOut() {
+function PopupAnimateOUT() {
     var popup = document.getElementById("myPopup");
     popup.classList.remove("show");
     popup.classList.add("remove");
