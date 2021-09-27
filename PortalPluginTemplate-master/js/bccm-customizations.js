@@ -10,13 +10,19 @@ function addManualRuleButton() {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
             let buttonConfig = FilterdUserGroups[i].buttons[x];
             let ManualRuleBtn = document.createElement("button");
-            let LoadingGIF = document.createElement("img");
             ManualRuleBtn.innerHTML = buttonConfig.label;
             ManualRuleBtn.type = "button";
             ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
-            document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
-            this.appendChild(LoadingGIF);
-            
+            // document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
+
+            let ManulaRuleDiv = document.createElement("div");
+            let LoadingGIF = document.createElement("img");
+            document.getElementById("div_maual_rule_button").appendChild(ManulaRuleDiv);
+            ManulaRuleDiv.appendChild(ManualRuleBtn);
+            ManulaRuleDiv.appendChild(LoadingGIF);
+            ManulaRuleDiv.appendChild(LoadingGIF);
+
+
             ManualRuleBtn.onclick = function() {
                 this.disabled = true;
                 let THIS = this;
