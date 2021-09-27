@@ -66,7 +66,6 @@ function popup(msg, isError) {
         setTimeout(PopupAnimateOut, 2000);
         popup.innerHTML = msg;
         popup.style.color = "ff0000"
-        console.log(isError);
     } else {
     var popup = document.getElementById("myPopup");
         popup.classList.add("show");
@@ -75,6 +74,7 @@ function popup(msg, isError) {
         popup.innerHTML = msg;
         popup.style.color = "#31ca3d"
     }
+    console.log(isError);
 }
 
 setTimeout(addManualRuleButton, 3000);
