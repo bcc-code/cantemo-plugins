@@ -23,7 +23,7 @@ function addManualRuleButton() {
             ManulaRuleDiv.appendChild(LoadingGIF);
             ManulaRuleDiv.appendChild(LoadingGIF);
 
-            LoadingGIF.setAttribute("src", "/opt/cantemo/portal/portal_media/img/svgs/item_page/loading.gif");
+            // LoadingGIF.setAttribute("src", "/opt/cantemo/portal/portal_media/img/svgs/item_page/loading.gif");
             LoadingGIF.setAttribute("class", "loading-green");
 
             ManualRuleBtn.onclick = function() {
