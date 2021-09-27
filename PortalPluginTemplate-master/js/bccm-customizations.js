@@ -65,7 +65,7 @@ function popup(msg, isError) {
     var popup = document.getElementById("myPopup");
     popup.classList.add("show");
     popup.classList.remove("remove");
-    setTimeout(PopupAnimateOut, 4000);
+    setTimeout(PopupAnimateOut, 3000);
     popup.innerHTML = msg;
 }
 
