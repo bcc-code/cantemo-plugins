@@ -24,7 +24,7 @@ function addManualRuleButton() {
             ManulaRuleDiv.appendChild(LoadingGIF);
 
             LoadingGIF.setAttribute("src", "/root/Media2/PortalPluginTemplate-master1234/loading.gif");
-
+            LoadingGIF.setAttribute("class", "loading-green");
 
             ManualRuleBtn.onclick = function() {
                 this.disabled = true;
