@@ -10,10 +10,12 @@ function addManualRuleButton() {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
             let buttonConfig = FilterdUserGroups[i].buttons[x];
             let ManualRuleBtn = document.createElement("button");
+            let LoadingGIF = document.createElement("img");
             ManualRuleBtn.innerHTML = buttonConfig.label;
             ManualRuleBtn.type = "button";
             ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
+            this.appendChild(LoadingGIF);
             
             ManualRuleBtn.onclick = function() {
                 this.disabled = true;
