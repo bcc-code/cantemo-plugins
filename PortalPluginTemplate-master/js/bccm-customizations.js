@@ -17,8 +17,9 @@ function addManualRuleButton() {
             
             ManualRuleBtn.onclick = function() {
                 this.disabled = true;
-                console.log(this)
-                setTimeout(function(){this.disabled = false;}, 5000);
+                console.log(this);
+                let THIS = this;
+                setTimeout(function(){THIS.disabled = false;}, 5000);
             }
 
             ManualRuleBtn.addEventListener('click', async _ => {
