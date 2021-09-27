@@ -15,18 +15,6 @@ function addManualRuleButton() {
             ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
             document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
 
-
-            // let ManulaRuleDiv = document.createElement("div");
-            // let LoadingGIF = document.createElement("img");
-            // document.getElementById("div_maual_rule_button").appendChild(ManulaRuleDiv);
-            // ManulaRuleDiv.appendChild(ManualRuleBtn);
-            // ManulaRuleDiv.appendChild(LoadingGIF);
-            // ManulaRuleDiv.appendChild(LoadingGIF);
-
-            // LoadingGIF.setAttribute("src", "aöslkdfjölakjsd");
-            // LoadingGIF.setAttribute("class", "loading-green");
-
-
             ManualRuleBtn.onclick = function() {
                 this.innerHTML = "loading..."
                 this.disabled = true;
