@@ -60,7 +60,7 @@ function PopupAnimateOut() {
 
 function popup(msg, isError) {
     if (isError) {
-        // only do this for errors
+        popup.style.color = "#ff0000"
     }
     var popup = document.getElementById("myPopup");
     popup.classList.add("show");
