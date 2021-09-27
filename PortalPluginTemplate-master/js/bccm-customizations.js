@@ -81,9 +81,6 @@ function disableBtn() {
     document.getElementsByClassName("button-green2").disabled = true;
   }
   
-function enableBtn() {
-    document.getElementById("button-green2").disabled = false;
-}
-
-setTimeout(disableBtn, 7000);
 setTimeout(addManualRuleButton, 3000);
+setTimeout(disableBtn, 7000);
+
