@@ -13,18 +13,19 @@ function addManualRuleButton() {
             ManualRuleBtn.innerHTML = buttonConfig.label;
             ManualRuleBtn.type = "button";
             ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
-            // document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
+            document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
 
 
-            let ManulaRuleDiv = document.createElement("div");
-            let LoadingGIF = document.createElement("img");
-            document.getElementById("div_maual_rule_button").appendChild(ManulaRuleDiv);
-            ManulaRuleDiv.appendChild(ManualRuleBtn);
-            ManulaRuleDiv.appendChild(LoadingGIF);
-            ManulaRuleDiv.appendChild(LoadingGIF);
+            // let ManulaRuleDiv = document.createElement("div");
+            // let LoadingGIF = document.createElement("img");
+            // document.getElementById("div_maual_rule_button").appendChild(ManulaRuleDiv);
+            // ManulaRuleDiv.appendChild(ManualRuleBtn);
+            // ManulaRuleDiv.appendChild(LoadingGIF);
+            // ManulaRuleDiv.appendChild(LoadingGIF);
 
-            LoadingGIF.setAttribute("src", "https://imgur.com/MSzY4fK");
-            LoadingGIF.setAttribute("class", "loading-green");
+            // LoadingGIF.setAttribute("src", "aöslkdfjölakjsd");
+            // LoadingGIF.setAttribute("class", "loading-green");
+
 
             ManualRuleBtn.onclick = function() {
                 this.disabled = true;
