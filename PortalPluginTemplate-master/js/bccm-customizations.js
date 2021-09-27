@@ -23,7 +23,7 @@ function addManualRuleButton() {
             ManulaRuleDiv.appendChild(LoadingGIF);
             ManulaRuleDiv.appendChild(LoadingGIF);
 
-            LoadingGIF.setAttribute("src", "http://i.stack.imgur.com/SBv4T.gif");
+            LoadingGIF.setAttribute("src", "/root/Media2/PortalPluginTemplate-master1234/loading.gif");
             LoadingGIF.setAttribute("class", "loading-green");
 
             ManualRuleBtn.onclick = function() {
