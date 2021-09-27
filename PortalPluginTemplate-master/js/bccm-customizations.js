@@ -76,11 +76,7 @@ function PopupAnimateOut() {
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
-
-function disableBtn() {
-    document.getElementsByClassName("button-green2").disabled = true;
-  }
   
 setTimeout(addManualRuleButton, 3000);
-setTimeout(disableBtn, 7000);
+
 
