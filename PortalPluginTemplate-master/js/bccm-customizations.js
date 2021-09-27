@@ -59,7 +59,7 @@ function PopupAnimateOut() {
 }
 
 function popup(msg, isError) {
-    if (isError == true) {
+    if (isError == false) {
         popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
