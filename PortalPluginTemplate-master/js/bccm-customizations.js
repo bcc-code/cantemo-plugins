@@ -27,7 +27,6 @@ function addManualRuleButton() {
                 if (!response.ok) {
                     console.error('Didnt succeed!', response);
                     popup("1 item already being processed", true)
-                    // show failure popup with details
                 }
                 else {
                     console.log('Completed!', response);
@@ -65,16 +64,15 @@ function popup(msg, isError) {
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOut, 2000);
         popup.innerHTML = msg;
-        popup.style.color = "#ff0000"
+        popup.style.color = "#e32222"
     } else {
         var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOut, 2000);
         popup.innerHTML = msg;
-        popup.style.color = "#31ca3d"
+        popup.style.color = "#c20c0c"
     }
-    console.log(isError);
 }
 
 setTimeout(addManualRuleButton, 3000);
