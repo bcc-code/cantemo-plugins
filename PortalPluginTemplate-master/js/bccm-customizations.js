@@ -60,6 +60,10 @@ function PopupAnimateOut() {
 
 function popup(msg, isError) {
     if (isError) {
+        popup.classList.add("show");
+        popup.classList.remove("remove");
+        setTimeout(PopupAnimateOut, 2000);
+        popup.innerHTML = msg;
         popup.style.color = "#ff0000"
     } else {
     var popup = document.getElementById("myPopup");
