@@ -58,7 +58,18 @@ export default {
                         label: `maximus eu`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         buttonColour: `button-lila`  
-                    }
+                    },
+                    {
+                        label: `tellus sed`,
+                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColour: `button-cyan`  
+                    },
+                    {
+                        label: `porta tellus`,
+                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColour: `button-flamingo`  
+                    },
+                    
                 ]
             }
         ]
