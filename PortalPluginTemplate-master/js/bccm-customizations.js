@@ -64,14 +64,14 @@ function popup(msg, isError) {
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOut, 2000);
         popup.innerHTML = msg;
-        popup.style.color = "#c20c0c"
+        popup.style.color = "#e64040"
     } else {
         var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOut, 2000);
         popup.innerHTML = msg;
-        popup.style.color = "#0da31a"
+        popup.style.color = "#38cf45"
     }
 }
 
