@@ -56,14 +56,14 @@ function popup(msg, isError) {
         var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
-        setTimeout(PopupAnimateOut, 2000);
+        setTimeout(PopupAnimateOut, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
     } else {
         var popup = document.getElementById("myPopup");
         popup.classList.add("show");
         popup.classList.remove("remove");
-        setTimeout(PopupAnimateOut, 2000);
+        setTimeout(PopupAnimateOut, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
     }
