@@ -26,7 +26,7 @@ function addManualRuleButton() {
                 });
                 if (!response.ok) {
                     console.error('Didnt succeed!', response);
-                    popup("failed", true)
+                    popup("0 items queued for processing, 1 item(s) already being processed", true)
                     // show failure popup with details
                 }
                 else {
