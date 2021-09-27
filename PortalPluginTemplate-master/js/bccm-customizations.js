@@ -78,7 +78,7 @@ function PopupAnimateOut() {
 }
 
 function disableBtn() {
-    document.getElementById("button-green2").disabled = true;
+    document.getElementsByClassName("button-green2").disabled = true;
   }
   
 function enableBtn() {
