@@ -69,7 +69,10 @@ function popup(msg, isError) {
     popup.innerHTML = msg;
 }
 
-setTimeout(document.getElementsByClassName("button-green2").disabled = true, 5000);
+function DisableButton() {
+    document.getElementsByClassName("button-green2").disabled = true;
+}
 
+setTimeout(DisableButton(), 5000);
 
 setTimeout(addManualRuleButton, 3000);
