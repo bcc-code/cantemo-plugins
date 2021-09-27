@@ -67,6 +67,7 @@ function popup(msg, isError) {
     popup.classList.remove("remove");
     setTimeout(PopupAnimateOut, 2000);
     popup.innerHTML = msg;
+    popup.style.color = "#31ca3d"
 }
 
 function DisableButton() {
