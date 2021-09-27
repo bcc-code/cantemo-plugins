@@ -60,7 +60,7 @@ function PopupAnimateOut() {
 
 function popup(msg, isError) {
     if (isError) {
-        // onlz do this for errors
+        // only do this for errors
     }
     var popup = document.getElementById("myPopup");
     popup.classList.add("show");
