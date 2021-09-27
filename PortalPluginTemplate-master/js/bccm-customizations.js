@@ -78,11 +78,12 @@ function PopupAnimateOut() {
 }
 
 function disableBtn() {
-    document.getElementById("TEST1234").disabled = true;
+    document.getElementById("button-green2").disabled = true;
   }
   
 function enableBtn() {
-    document.getElementById("TEST1234").disabled = false;
+    document.getElementById("button-green2").disabled = false;
 }
 
+setTimeout(disableBtn, 7000);
 setTimeout(addManualRuleButton, 3000);
