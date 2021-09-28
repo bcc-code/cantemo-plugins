@@ -59,14 +59,14 @@ function filterUserGroups(userGroup) {
 
 function PopupAnimateIN(msg, isError) {
     if (isError) {
-        var popup = document.getElementById("yourPopup");
+        var popup = document.getElementById("PopupID");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
     } else {
-        var popup = document.getElementById("yourPopup");
+        var popup = document.getElementById("PopupID");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOUT, 1500);
@@ -76,7 +76,7 @@ function PopupAnimateIN(msg, isError) {
 }
 
 function PopupAnimateOUT() {
-    var popup = document.getElementById("yourPopup");
+    var popup = document.getElementById("PopupID");
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
