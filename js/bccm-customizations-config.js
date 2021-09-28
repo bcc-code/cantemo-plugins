@@ -1,3 +1,15 @@
+
+const green = "button-green2";
+const yellow = "button-yellow";
+const blue = "button-blue";
+const orange = "button-orange";
+const red = "button-red2";
+const pink = "button-pink";
+const turquoise = "button-turquoise";
+const lila = "button-lila";
+const cyan = "button-cyan";
+const flamingo = "button-flamingo";
+
 export default {
     ruleButtonPlugin: {
         userGroups: [
@@ -75,14 +87,3 @@ export default {
         ]
     }
 }
-
-const green = "button-green2";
-const yellow = "button-yellow";
-const blue = "button-blue";
-const orange = "button-orange";
-const red = "button-red2";
-const pink = "button-pink";
-const turquoise = "button-turquoise";
-const lila = "button-lila";
-const cyan = "button-cyan";
-const flamingo = "button-flamingo";
