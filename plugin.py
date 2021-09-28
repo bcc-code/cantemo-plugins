@@ -40,7 +40,7 @@ class ManualRuleButtonPlugin(Plugin):
 
     def __init__(self):
         self.name = "MediaViewItemTechMetadataTop"
-        self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d1"
+        self.plugin_guid = "063f4c81-c62b-4362-aec2-16ca5f26215f"
         log.debug("Init ManualRuleButtonPlugin")
 
     def return_string(self, tagname, *args):
@@ -50,7 +50,7 @@ class ManualRuleButtonPlugin(Plugin):
         user_groups = user.groups.values_list('name', flat = True)
         return {
             'guid': self.plugin_guid,
-            'template': 'portalplugintemplate/manual_rule_button_plugin.html',
+            'template': 'templates/manual_rule_button_plugin.html',
             'context': { 
                 'user_group': 'admin',
                 'user_groups': safe_serialize(list(user_groups)),
@@ -65,7 +65,7 @@ class ManualRuleButtonJsPlugin(Plugin):
 
     def __init__(self):
         self.name = "BaseJS"
-        self.plugin_guid = "03eed808-5c6b-42a7-88a1-0336bcf790d2"
+        self.plugin_guid = "bbf0772e-8de0-4e0c-884e-8bdebac253e0"
         log.debug("Initiated ManualRuleButtonJsPlugin")
 
     def return_string(self, tagname, *args):
@@ -75,7 +75,7 @@ class ManualRuleButtonJsPlugin(Plugin):
         item_id = context['item_id']
         return {
             'guid': self.plugin_guid,
-            'template': 'portalplugintemplate/manual_rule_button_plugin_js.html',
+            'template': 'templates/manual_rule_button_plugin_js.html',
             'context': {
                 'user_groups': safe_serialize(list(user_groups)),
                 'item_id': item_id,
