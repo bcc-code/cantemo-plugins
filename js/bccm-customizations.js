@@ -10,11 +10,10 @@ function addManualRuleButton() {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
             let buttonConfig = FilterdUserGroups[i].buttons[x];
             let ManualRuleButton = document.createElement("button");
-            let MediaViewItemTechMetadataTop = document.getElementsByClassName("MediaViewItemTechMetadataTop")[0];
             ManualRuleButton.innerHTML = buttonConfig.label;
             ManualRuleButton.type = "button";
             ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
-            MediaViewItemTechMetadataTop.appendChild(ManualRuleButton); 
+            document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
 
             ManualRuleButton.onclick = function() {
                 this.innerHTML = "working..."
@@ -82,5 +81,8 @@ function PopupAnimateOUT() {
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
+
+let MediaViewItemTechMetadataTop = document.getElementsByClassName("MediaViewItemTechMetadataTop")[0];
+MediaViewItemTechMetadataTop.setAttribute("style", "z-index: 9000");
 
 setTimeout(addManualRuleButton, 3000);
