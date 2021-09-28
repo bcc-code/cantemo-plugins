@@ -1,6 +1,6 @@
 #!/bin/bash
 PORTAL_ROOT="/opt/cantemo/portal"
-PLUGIN_NAME="PortalPluginTemplate"
+PLUGIN_NAME="ManualRuleButtonPlugin"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 

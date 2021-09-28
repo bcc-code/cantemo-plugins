@@ -8,6 +8,8 @@ TODO:
 - Feedback: Show that the process has started somehow
   - Show progress (api call to get status? call it every few seconds?)
 
+- Clean up names (no myplugin)
+
 
 ## The args object
 

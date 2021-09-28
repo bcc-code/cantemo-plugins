@@ -1,34 +1,33 @@
 import config from '/sitemedia/js/bccm-customizations-config.js';
-//import config from '/bccm-customizations-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 
-//creates button and add´s EventListener
+//generates Button and adds EventListener
 
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroups.length; i++) {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
             let buttonConfig = FilterdUserGroups[i].buttons[x];
-            let ManualRuleBtn = document.createElement("button");
-            ManualRuleBtn.innerHTML = buttonConfig.label;
-            ManualRuleBtn.type = "button";
-            ManualRuleBtn.setAttribute("class", buttonConfig.buttonColour);
-            document.getElementById("div_maual_rule_button").appendChild(ManualRuleBtn); 
+            let ManualRuleButton = document.createElement("button");
+            ManualRuleButton.innerHTML = buttonConfig.label;
+            ManualRuleButton.type = "button";
+            ManualRuleButton.setAttribute("class", buttonConfig.button_colur);
+            document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
 
-            ManualRuleBtn.onclick = function() {
+            ManualRuleButton.onclick = function() {
                 this.innerHTML = "working..."
                 this.disabled = true;
                 let THIS = this;
                 setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
             }
 
-            ManualRuleBtn.addEventListener('click', async _ => {
+            ManualRuleButton.addEventListener('click', async _ => {
                 const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                     method: 'POST',
                     headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
                     body: new URLSearchParams({
                         'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                        'process_id': buttonConfig.processId,
+                        'process_id': buttonConfig.process_id,
                     })
                 });
                 if (!response.ok) {
@@ -60,16 +59,16 @@ function filterUserGroups(userGroup) {
 
 function PopupAnimateIN(msg, isError) {
     if (isError) {
-        var popup = document.getElementById("myPopup");
+        var popup = document.getElementById("popup_id");
         popup.classList.add("show");
-        popup.classList.remove("remove");
+        popup.classList.remove("hide");
         setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
     } else {
-        var popup = document.getElementById("myPopup");
+        var popup = document.getElementById("popup_id");
         popup.classList.add("show");
-        popup.classList.remove("remove");
+        popup.classList.remove("hide");
         setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
@@ -77,9 +76,9 @@ function PopupAnimateIN(msg, isError) {
 }
 
 function PopupAnimateOUT() {
-    var popup = document.getElementById("myPopup");
+    var popup = document.getElementById("popup_id");
     popup.classList.remove("show");
-    popup.classList.add("remove");
+    popup.classList.add("hide");
 }
-  
+
 setTimeout(addManualRuleButton, 3000);
