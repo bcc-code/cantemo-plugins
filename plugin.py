@@ -7,25 +7,25 @@ import json
 import logging
 log = logging.getLogger(__name__)
 
-# class MyPluginURL(Plugin):
-#     """
-#     URL Plugin that defines new URL's in the system
-#     Loads the Admin rules URL's
-#     """
-#     implements(IPluginURL)
-    
-#     def __init__(self):
-#         self.name = "MyPluginURL"
-#         # Should point to the urls.py
-#         self.urls = 'portal.plugins.PortalPluginTemplate.urls'
-#         # Defines the URL pattern prefix
-#         self.urlpattern = r'^myplugin/'
-#         # Defines the plugin namespace
-#         self.namespace = 'myplugin'
-#         # Define a GUID for each plugin.
-#         # Use e.g. http://www.guidgenerator.com/
-#         self.plugin_guid = "906ec22a-bfd4-48be-8d57-4cf8f4cb2da8"
-#         log.debug("Initiated MyPluginURL")
+class MyPluginURL(Plugin):
+    """
+    URL Plugin that defines new URL's in the system
+    Loads the Admin rules URL's
+    """
+    implements(IPluginURL)
+  
+    def __init__(self):
+        self.name = "MyPluginURL"
+        # Should point to the urls.py
+        self.urls = 'portal.plugins.PortalPluginTemplate.urls'
+        # Defines the URL pattern prefix
+        self.urlpattern = r'^myplugin/'
+        # Defines the plugin namespace
+        self.namespace = 'myplugin'
+        # Define a GUID for each plugin.
+        # Use e.g. http://www.guidgenerator.com/
+        self.plugin_guid = "906ec22a-bfd4-48be-8d57-4cf8f4cb2da8"
+        log.debug("Initiated MyPluginURL")
 
 
 # MyPluginURL()
@@ -75,7 +75,7 @@ class ManualRuleButtonJsPlugin(Plugin):
         item_id = context['item_id']
         return {
             'guid': self.plugin_guid,
-            'template': 'templates/manual_rule_button_plugin_js.html',
+            'template': 'manual_rule_button_plugin_js.html',
             'context': {
                 'user_groups': safe_serialize(list(user_groups)),
                 'item_id': item_id,
