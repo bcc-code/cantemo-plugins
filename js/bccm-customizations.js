@@ -59,16 +59,16 @@ function filterUserGroups(userGroup) {
 
 function PopupAnimateIN(msg, isError) {
     if (isError) {
-        var popup = document.getElementById("popup_id");
+        var popup = document.getElementById("myPopup");
         popup.classList.add("show");
-        popup.classList.remove("hide");
+        popup.classList.remove("remove");
         setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
     } else {
-        var popup = document.getElementById("popup_id");
+        var popup = document.getElementById("myPopup");
         popup.classList.add("show");
-        popup.classList.remove("hide");
+        popup.classList.remove("remove");
         setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
@@ -76,9 +76,9 @@ function PopupAnimateIN(msg, isError) {
 }
 
 function PopupAnimateOUT() {
-    var popup = document.getElementById("popup_id");
+    var popup = document.getElementById("myPopup");
     popup.classList.remove("show");
-    popup.classList.add("hide");
+    popup.classList.add("remove");
 }
 
 setTimeout(addManualRuleButton, 3000);
