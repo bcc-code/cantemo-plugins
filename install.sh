@@ -1,6 +1,13 @@
 #!/bin/bash
+set -o pipefail
+
 PORTAL_ROOT="/opt/cantemo/portal"
 PLUGIN_NAME="ManualRuleButtonPlugin"
+
+if [ $(id -u) -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -9,16 +16,16 @@ if [ "X${DIR}" = "X" ]; then
     exit 1
 fi
 
-sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
+mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+cp -vr $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+cp -vr $DIR/js/* $PORTAL_ROOT/portal_media/js
 
 echo "Done."
 
 echo "Stopping portal"
 systemctl stop portal.target
 echo "Syncing data"
-cd /opt/cantemo/portal
+cd "$PORTAL_ROOT"
 python manage.py syncdata
 cd $DIR
 echo "Starting portal"
