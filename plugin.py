@@ -50,7 +50,7 @@ class ManualRuleButtonPlugin(Plugin):
         user_groups = user.groups.values_list('name', flat = True)
         return {
             'guid': self.plugin_guid,
-            'template': 'templates/manual_rule_button_plugin.html',
+            'template': 'manual_rule_button_plugin.html',
             'context': { 
                 'user_group': 'admin',
                 'user_groups': safe_serialize(list(user_groups)),
