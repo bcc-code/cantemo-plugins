@@ -12,8 +12,8 @@ function addManualRuleButton() {
             let ManualRuleButton = document.createElement("button");
             ManualRuleButton.innerHTML = buttonConfig.label;
             ManualRuleButton.type = "button";
-            ManualRuleButton.setAttribute("class", buttonConfig.button_colur);
-            document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
+            ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
+            document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); x
 
             ManualRuleButton.onclick = function() {
                 this.innerHTML = "working..."
