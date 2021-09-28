@@ -13,7 +13,7 @@ function addManualRuleButton() {
             ManualRuleButton.innerHTML = buttonConfig.label;
             ManualRuleButton.type = "button";
             ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
-            document.getElementsByClassName("MediaViewItemTechMetadataTop").appendChild(ManualRuleButton); 
+            document.getElementsByClassName("MediaViewItemTechMetadataTop")[0].appendChild(ManualRuleButton); 
 
             ManualRuleButton.onclick = function() {
                 this.innerHTML = "working..."
