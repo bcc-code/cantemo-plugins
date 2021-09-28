@@ -1,4 +1,5 @@
 import config from '/sitemedia/js/bccm-customizations-config.js';
+//change bccm-customizations-config.js to right config file if you use different config file
 
 console.log(`bccm-customizations.js executing`) 
 
@@ -59,14 +60,14 @@ function filterUserGroups(userGroup) {
 
 function PopupAnimateIN(msg, isError) {
     if (isError) {
-        var popup = document.getElementById("popup_id");
+        var popup = document.getElementById("popup-id");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOUT, 1500);
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
     } else {
-        var popup = document.getElementById("popup_id");
+        var popup = document.getElementById("popup-id");
         popup.classList.add("show");
         popup.classList.remove("remove");
         setTimeout(PopupAnimateOUT, 1500);
@@ -76,7 +77,7 @@ function PopupAnimateIN(msg, isError) {
 }
 
 function PopupAnimateOUT() {
-    var popup = document.getElementById("popup_id");
+    var popup = document.getElementById("popup-id");
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
