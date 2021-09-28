@@ -28,7 +28,7 @@ class MyPluginURL(Plugin):
         log.debug("Initiated MyPluginURL")
 
 
-# MyPluginURL()
+MyPluginURL()
 
 
 def safe_serialize(obj):
