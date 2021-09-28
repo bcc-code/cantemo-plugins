@@ -1,4 +1,5 @@
 import config from '/sitemedia/js/bccm-customizations-config.js';
+//change bccm-customizations-config.js to right config file if you use different config file
 
 console.log(`bccm-customizations.js executing`) 
 
