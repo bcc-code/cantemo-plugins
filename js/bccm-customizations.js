@@ -22,7 +22,7 @@ function addManualRuleButton() {
             }
 
             ManualRuleButton.addEventListener('click', async _ => {
-                const response = await fetch('http://10.12.128.19/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
+                const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                     method: 'POST',
                     headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
                     body: new URLSearchParams({

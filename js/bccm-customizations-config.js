@@ -7,12 +7,12 @@ export default {
                     {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-green2`
+                        button_colur: green
                     },
                     {
                         label: `test1`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-yellow`
+                        button_colur: yellow
                     }
                 ]
             },
@@ -22,7 +22,7 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-blue`                    
+                        button_colur: blue                   
                     }
                 ]
             },
@@ -32,42 +32,42 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-orange`  
+                        button_colur: orange
                     },
                     {
                         label: `molestie leo`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-red2`  
+                        button_colur: red
                     },
                     {
                         label: `imperdiet eget`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-turquoise`  
+                        button_colur: turquoise
                     },
                     {
                         label: `neque laoreet`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-pink`  
+                        button_colur: pink
                     },
                     {
                         label: `Vivamus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-blue`  
+                        button_colur: blue
                     },
                     {
                         label: `maximus eu`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-lila`  
+                        button_colur: lila
                     },
                     {
                         label: `tellus sed`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-cyan`  
+                        button_colur: cyan
                     },
                     {
                         label: `porta tellus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colur: `button-flamingo`  
+                        button_colur: flamingo
                     },
                     
                 ]
@@ -75,3 +75,14 @@ export default {
         ]
     }
 }
+
+const green = "button-green2";
+const yellow = "button-yellow";
+const blue = "button-blue";
+const orange = "button-orange";
+const red = "button-red2";
+const pink = "button-pink";
+const turquoise = "button-turquoise";
+const lila = "button-lila";
+const cyan = "button-cyan";
+const flamingo = "button-flamingo";
