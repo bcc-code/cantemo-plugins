@@ -1,5 +1,17 @@
  
-import * as constant from '/sitemedia/js/bccm-customizations.js'
+// import * as constant from '/sitemedia/js/bccm-customizations.js'
+
+const green = "button-green2";
+const yellow = "button-yellow";
+const blue = "button-blue";
+const orange = "button-orange";
+const red = "button-red2";
+const pink = "button-pink";
+const cyan = "button-cyan";
+const flamingo = "button-flamingo";
+const turquoise = "button-turquoise";
+const lila = "button-lila";
+
 
 export default {
     ruleButtonPlugin: {
@@ -10,12 +22,12 @@ export default {
                     {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.green
+                        button_colour: green
                     },
                     {
                         label: `test1`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.yellow
+                        button_colour: yellow
                     }
                 ]
             },
@@ -25,7 +37,7 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.blue                   
+                        button_colour: blue                   
                     }
                 ]
             },
@@ -35,42 +47,42 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.orange
+                        button_colour: orange
                     },
                     {
                         label: `molestie leo`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.red
+                        button_colour: red
                     },
                     {
                         label: `imperdiet eget`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.turquoise
+                        button_colour: turquoise
                     },
                     {
                         label: `neque laoreet`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.pink
+                        button_colour: pink
                     },
                     {
                         label: `Vivamus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.blue
+                        button_colour: blue
                     },
                     {
                         label: `maximus eu`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.lila
+                        button_colour: lila
                     },
                     {
                         label: `tellus sed`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.cyan
+                        button_colour: cyan
                     },
                     {
                         label: `porta tellus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: constant.flamingo
+                        button_colour: flamingo
                     },
                     
                 ]
