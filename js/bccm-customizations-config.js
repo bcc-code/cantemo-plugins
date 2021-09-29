@@ -1,5 +1,5 @@
  
-import {green, yellow, blue, orange, red, pink, cyan, flamingo} from '/sitemedia/js/bccm-customizations.js'
+import { green, yellow, blue, orange, red, pink, cyan, flamingo } from '/sitemedia/js/bccm-customizations.js'
 
 export default {
     ruleButtonPlugin: {
