@@ -1,14 +1,5 @@
-
-const green = "button-green2";
-const yellow = "button-yellow";
-const blue = "button-blue";
-const orange = "button-orange";
-const red = "button-red2";
-const pink = "button-pink";
-const turquoise = "button-turquoise";
-const lila = "button-lila";
-const cyan = "button-cyan";
-const flamingo = "button-flamingo";
+ 
+import {green, yellow, blue, orange, red, pink, cyan, flamingo} from '/sitemedia/js/bccm-customizations.js'
 
 export default {
     ruleButtonPlugin: {
