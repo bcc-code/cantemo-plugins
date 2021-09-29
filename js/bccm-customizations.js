@@ -1,7 +1,7 @@
 import config from '/sitemedia/js/bccm-customizations-config.js';
 //change bccm-customizations-config.js to right config file if you use different config file
 
-export const {
+export default {
     green = "button-green2",
     yellow = "button-yellow",
     blue = "button-blue",
