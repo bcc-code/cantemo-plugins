@@ -29,7 +29,7 @@ echo "Done."
 echo "Stopping portal"
 systemctl stop portal.target
 echo "Syncing data"
-cd /opt/cantemo/portal
+cd "$PORTAL_ROOT"
 python manage.py syncdata
 cd $DIR
 echo "Starting portal"
