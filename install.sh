@@ -1,13 +1,7 @@
 #!/bin/bash
-set -o pipefail
-
+CONFIG_FILE="/opt/cantemo/portal/portal_media/js/bccm-customizations-config.js"
 PORTAL_ROOT="/opt/cantemo/portal"
 PLUGIN_NAME="ManualRuleButtonPlugin"
-
-if [ $(id -u) -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -17,9 +11,16 @@ if [ "X${DIR}" = "X" ]; then
     exit 1
 fi
 
-mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-cp -vr $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-cp -vr $DIR/js/* $PORTAL_ROOT/portal_media/js
+
+if [ -f "$CONFIG_FILE" ]; then
+    echo "$CONFIG_FILE exists."
+else 
+    echo "$CONFIG_FILE does not exist."
+fi
+
+sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
 
 # sudo cp -r /path/of/config/file $PORTAL_ROOT/portal_media/js
 
