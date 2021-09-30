@@ -1,5 +1,5 @@
 
-TODO:
+# TODO:
 - DONE Create buttons with javascript 
 - DONE Get user role from cantemo
 - DONE Get item id from cantemo
@@ -12,17 +12,17 @@ TODO:
 - DONE Clean up names (no myplugin)
 
 
-- CONFIGFILES
+- ## CONFIGFILES
     - DONE add example config file
 
-    - make it so the config file only gets instaled when tere is no other config file present
+    - ### Make it so the config file only gets instaled when tere is no other config file present
         - DONE make a vaiable that defines the path to the config file that you want to use
             - CONFIG_FILE="/opt/cantemo/portal/portal_media/js/bccm-customizations-config.js"
         - DONE check if the config file that is defined in the variable exists
         - if there is instal it
         - if not then instal the example file
         - make it so that the bccm-customizations.js file imports the right config (if ther is one specified then use it if not use the default)
-        
+
 
 
 
