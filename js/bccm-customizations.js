@@ -1,7 +1,13 @@
-import config from '/sitemedia/js/bccm-example-config.js';
+import defaultconfig from '/sitemedia/js/bccm-example-config.js';
 import config from '/sitemedia/js/test-config.js';
 
 console.log(`bccm-customizations.js executing`) 
+
+if(fileExists("/sitemedia/js/test-config.js") !== true) {
+    var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+}else{
+    var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+};
 
 //generates Button and adds EventListener
 
@@ -46,7 +52,16 @@ function addManualRuleButton() {
 
 //filters out the user groups from the config file
 
-let FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+function fileExists(url) {
+    if(url){
+        var req = new XMLHttpRequest();
+        req.open('GET', url, false);
+        req.send();
+        return req.status==200;
+    } else {
+        return false;
+    }
+}
 
 function filterUserGroups(userGroup) {
     for (var i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
