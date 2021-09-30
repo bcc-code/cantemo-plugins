@@ -1,4 +1,4 @@
-import config from '/sitemedia/js/bccm-customizations-config.js';
+import config from '/sitemedia/js/test-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 

@@ -18,7 +18,6 @@
 
     - ### Make it so the config file only gets instaled when tere is no other config file present
         - ✅ make a vaiable that defines the path to the config file that you want to use
-            - CONFIG_FILE="/opt/cantemo/portal/portal_media/js/bccm-customizations-config.js"
         - ✅ check if the config file that is defined in the variable exists
         - if there is instal it
         - if not then instal the example file

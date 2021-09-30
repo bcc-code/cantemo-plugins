@@ -1,5 +1,6 @@
 #!/bin/bash
-CONFIG_FILE="/opt/cantemo/portal/portal_media/js/bccm-customizations-config.js"
+CONFIG_FILE="/root/cantemo-plugins/js/test-config.js"
+# path to config file that you wnat to use
 PORTAL_ROOT="/opt/cantemo/portal"
 PLUGIN_NAME="ManualRuleButtonPlugin"
 
@@ -11,18 +12,18 @@ if [ "X${DIR}" = "X" ]; then
     exit 1
 fi
 
+sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+# sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
+
+sudo cp -r !test-config.js $PORTAL_ROOT/portal_media/js
 
 if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
+    sudo cp $CONFIG_FILE $PORTAL_ROOT/portal_media/js
 else 
     echo "$CONFIG_FILE does not exist."
 fi
-
-sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
-
-# sudo cp -r /path/of/config/file $PORTAL_ROOT/portal_media/js
 
 echo "Done."
 
