@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFIG_FILE="/root/cantemo-plugins/js/test-config.js"
+CONFIG_FILE="/root/test-config/test-config.js"
 # path to config file that you wnat to use
 PORTAL_ROOT="/opt/cantemo/portal"
 PLUGIN_NAME="ManualRuleButtonPlugin"
