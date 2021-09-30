@@ -23,6 +23,7 @@ if [ -f "$CONFIG_FILE" ]; then
     sudo cp $CONFIG_FILE $PORTAL_ROOT/portal_media/js
 else 
     echo "$CONFIG_FILE does not exist."
+    sudo cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js
 fi
 
 echo "Done."
