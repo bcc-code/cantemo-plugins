@@ -1,10 +1,12 @@
-const green = "button-green2";
-const yellow = "button-yellow";
-const blue = "button-blue";
-const orange = "button-orange";
-const red = "button-red2";
-const pink = "button-pink";
-const cyan = "button-cyan";
-const flamingo = "button-flamingo";
-const turquoise = "button-turquoise";
-const lila = "button-lila";
+export default { 
+    green: "button-green2",
+    yellow: "button-yellow",
+    blue: "button-blue",
+    orange: "button-orange",
+    red: "button-red2",
+    pink: "button-pink",
+    cyan: "button-cyan",
+    flamingo: "button-flamingo",
+    turquoise: "button-turquoise",
+    lila: "button-lila",
+};

@@ -1,2 +1,4 @@
-const admin = "Admin";
-const _special_all = "_special_all";
+export default { 
+    admin: "Admin",
+    _special_all: "_special_all",
+};
