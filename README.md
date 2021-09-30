@@ -20,7 +20,7 @@
         - ✅ make a vaiable that defines the path to the config file that you want to use
         - ✅ check if the config file that is defined in the variable exists
         - ✅ if there is instal it
-        - if not then instal the example file
+        - ✅ if not then instal the example file
         - make it so that the bccm-customizations.js file imports the right config (if ther is one specified then use it if not use the default)
 
 
