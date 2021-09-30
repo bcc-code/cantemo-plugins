@@ -1,12 +1,11 @@
 import * as colour from '/sitemedia/js/bccm-colours.js';
 import * as group from '/sitemedia/js/bccm-groups.js';
 
-
 export default {
     ruleButtonPlugin: {
         userGroups: [
             {
-                name: group.admin,
+                name: `Admin`,
                 buttons: [
                     {
                         label: `Send to BMM`,
@@ -31,7 +30,7 @@ export default {
                 ]
             },
             {
-                name: group._special_all,
+                name: `_special_all`,
                 buttons: [
                     {
                         label: `Send to BrunstadTV`,
