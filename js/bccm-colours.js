@@ -10,5 +10,3 @@ export default {
     turquoise: "button-turquoise",
     lila: "button-lila",
 };
-
-console.log(lila);
