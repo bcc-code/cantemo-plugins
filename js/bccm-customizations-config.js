@@ -8,7 +8,7 @@ export default {
     ruleButtonPlugin: {
         userGroups: [
             {
-                name: `Admin`,
+                name: group.admin,
                 buttons: [
                     {
                         label: `Send to BMM`,
@@ -33,7 +33,7 @@ export default {
                 ]
             },
             {
-                name: `_special_all`,
+                name: group.special_all,
                 buttons: [
                     {
                         label: `Send to BrunstadTV`,
