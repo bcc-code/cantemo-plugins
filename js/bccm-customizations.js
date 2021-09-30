@@ -1,18 +1,4 @@
 import config from '/sitemedia/js/bccm-customizations-config.js';
-//change bccm-customizations-config.js to right config file if you use different config file
-
-// export default { 
-//     green: "button-green2",
-//     yellow: "button-yellow",
-//     blue: "button-blue",
-//     orange: "button-orange",
-//     red: "button-red2",
-//     pink: "button-pink",
-//     cyan: "button-cyan",
-//     flamingo: "button-flamingo",
-//     turquoise: "button-turquoise",
-//     lila: "button"
-// };
 
 console.log(`bccm-customizations.js executing`) 
 
@@ -95,10 +81,10 @@ function PopupAnimateOUT() {
     popup.classList.add("remove");
 }
 
-function add_z_index() {
-    let MediaViewItemTechMetadataTop = document.getElementsByClassName("MediaViewItemTechMetadataTop")[0];
-    MediaViewItemTechMetadataTop.setAttribute("style", "z-index: 9000");
-}
+// function add_z_index() {
+//     let MediaViewItemTechMetadataTop = document.getElementsByClassName("MediaViewItemTechMetadataTop")[0];
+//     MediaViewItemTechMetadataTop.setAttribute("style", "z-index: 9000");
+// }
+// setTimeout(add_z_index, 4000);  
 
 setTimeout(addManualRuleButton, 3000);
-setTimeout(add_z_index, 4000);  
