@@ -11,6 +11,7 @@
 
 - ✅ Clean up names (no myplugin)
 
+<br/>
 
 - ## CONFIGFILES
     - ✅ add example config file
@@ -24,12 +25,12 @@
         - make it so that the bccm-customizations.js file imports the right config (if ther is one specified then use it if not use the default)
 
 
+<br/>
 
-
-- CHALANGE
+- ## CHALANGE
     - generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
 
-
+<br/>
 
 ## The args object
 
