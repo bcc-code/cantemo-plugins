@@ -1,6 +1,9 @@
 import * as colour from '/sitemedia/js/bccm-colours.js';
 import * as group from '/sitemedia/js/bccm-groups.js';
 
+console.log(colour.green);
+console.log(group.admin);
+
 export default {
     ruleButtonPlugin: {
         userGroups: [
