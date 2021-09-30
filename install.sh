@@ -16,7 +16,7 @@ sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 # sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
 
-find src/ ! -name bccm-example-config.js -exec cp -t $PORTAL_ROOT/portal_media/js {} +
+find $DIR/js ! -name bccm-example-config.js -exec cp -t $PORTAL_ROOT/portal_media/js {} +
 
 if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
