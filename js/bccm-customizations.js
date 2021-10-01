@@ -4,9 +4,9 @@ import config from '/sitemedia/js/test-config.js';
 console.log(`bccm-customizations.js executing`) 
 
 
-var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+// var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-//     var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 
 //generates Button and adds EventListener
