@@ -11,29 +11,29 @@ def safe_serialize(obj):
     default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"
     return json.dumps(obj, default=default)
 
-class ManualRuleButtonPlugin(Plugin):
-    implements(IPluginBlock)
+# class ManualRuleButtonPlugin(Plugin):
+#     implements(IPluginBlock)
 
-    def __init__(self):
-        self.name = "MediaViewItemTechMetadataTop"
-        self.plugin_guid = "063f4c81-c62b-4362-aec2-16ca5f26215f"
-        log.debug("Init ManualRuleButtonPlugin")
+#     def __init__(self):
+#         self.name = "MediaViewItemTechMetadataTop"
+#         self.plugin_guid = "063f4c81-c62b-4362-aec2-16ca5f26215f"
+#         log.debug("Init ManualRuleButtonPlugin")
 
-    def return_string(self, tagname, *args):
-        context = args[1]
-        request = context['request']
-        user = context['user']
-        user_groups = user.groups.values_list('name', flat = True)
-        return {
-            'guid': self.plugin_guid,
-            'template': 'manual_rule_button_plugin.html',
-            'context': { 
-                'user_group': 'admin',
-                'user_groups': safe_serialize(list(user_groups)),
-            }
-        }
+#     def return_string(self, tagname, *args):
+#         context = args[1]
+#         request = context['request']
+#         user = context['user']
+#         user_groups = user.groups.values_list('name', flat = True)
+#         return {
+#             'guid': self.plugin_guid,
+#             'template': 'manual_rule_button_plugin.html',
+#             'context': { 
+#                 'user_group': 'admin',
+#                 'user_groups': safe_serialize(list(user_groups)),
+#             }
+#         }
 
-ManualRuleButtonPlugin()
+# ManualRuleButtonPlugin()
 
 
 # class ManualRuleButtonJsPlugin(Plugin):
