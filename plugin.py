@@ -36,26 +36,26 @@ class ManualRuleButtonPlugin(Plugin):
 ManualRuleButtonPlugin()
 
 
-class ManualRuleButtonJsPlugin(Plugin):
-    implements(IPluginBlock)
+# class ManualRuleButtonJsPlugin(Plugin):
+#     implements(IPluginBlock)
 
-    def __init__(self):
-        self.name = "BaseJS"
-        self.plugin_guid = "bbf0772e-8de0-4e0c-884e-8bdebac253e0"
-        log.debug("Initiated ManualRuleButtonJsPlugin")
+#     def __init__(self):
+#         self.name = "BaseJS"
+#         self.plugin_guid = "bbf0772e-8de0-4e0c-884e-8bdebac253e0"
+#         log.debug("Initiated ManualRuleButtonJsPlugin")
 
-    def return_string(self, tagname, *args):
-        context = args[1]
-        user = context['user']
-        user_groups = user.groups.values_list('name', flat = True)
-        item_id = context['item_id']
-        return {
-            'guid': self.plugin_guid,
-            'template': 'manual_rule_button_plugin_js.html',
-            'context': {
-                'user_groups': safe_serialize(list(user_groups)),
-                'item_id': item_id,
-            }
-        }
+#     def return_string(self, tagname, *args):
+#         context = args[1]
+#         user = context['user']
+#         user_groups = user.groups.values_list('name', flat = True)
+#         item_id = context['item_id']
+#         return {
+#             'guid': self.plugin_guid,
+#             'template': 'manual_rule_button_plugin_js.html',
+#             'context': {
+#                 'user_groups': safe_serialize(list(user_groups)),
+#                 'item_id': item_id,
+#             }
+#         }
 
-ManualRuleButtonJsPlugin()
+# ManualRuleButtonJsPlugin()
