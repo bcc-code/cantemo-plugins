@@ -86,10 +86,4 @@ function PopupAnimateOUT() {
     popup.classList.add("remove");
 }
 
-// function add_z_index() {
-//     let MediaViewItemTechMetadataTop = document.getElementsByClassName("MediaViewItemTechMetadataTop")[0];
-//     MediaViewItemTechMetadataTop.setAttribute("style", "z-index: 9000");
-// }
-// setTimeout(add_z_index, 4000);  
-
 setTimeout(addManualRuleButton, 3000);
