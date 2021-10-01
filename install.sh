@@ -1,8 +1,15 @@
 #!/bin/bash
+set -o pipefail
+
 CONFIG_FILE="/root/test-config/test-config.js"
 # path to config file that you wnat to use
 PORTAL_ROOT="/opt/cantemo/portal"
 PLUGIN_NAME="ManualRuleButtonPlugin"
+
+if [ $(id -u) -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -12,18 +19,17 @@ if [ "X${DIR}" = "X" ]; then
     exit 1
 fi
 
-sudo mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-sudo cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-# sudo cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
+mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+# cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
 
 find $DIR/js ! -name bccm-example-config.js -exec cp -t $PORTAL_ROOT/portal_media/js {} +
 
 if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
-    sudo cp $CONFIG_FILE $PORTAL_ROOT/portal_media/js
 else 
     echo "$CONFIG_FILE does not exist."
-    sudo cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js
+    cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js
 fi
 
 echo "Done."
