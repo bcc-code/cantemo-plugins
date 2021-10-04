@@ -7,13 +7,12 @@ console.log(`bccm-customizations.js executing`)
 
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-
 // var group_name = await respose.json(fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}));
 
 // setTimeout(console.log(group_name), 5000)
 
-fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(response => response.json());
-
+fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(await response => response.json());
+setTimeout(console.log(response), 5000)
 //var body = await response.json();
 
 //generates Button and adds EventListener
