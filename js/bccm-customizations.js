@@ -28,6 +28,9 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 
  http.onload = () => console.log(http.responseText) && var group_name = http.responseText.group_name
 
+console.log("group name:")
+console.log(group_name)
+
 
 
 //generates Button and adds EventListener
