@@ -16,12 +16,12 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 var metadata_groups = async response2 => {
     const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
         method: 'GET'
-    })
+    }).json().then(data => {console.log(data)})
 };
 
-metadata_groups.json().then(data => {
-    console.log(data)
-});
+// metadata_groups.json().then(data => {
+//     console.log(data)
+// });
 
 
 //var body = await response.json();
