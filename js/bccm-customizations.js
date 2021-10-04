@@ -18,7 +18,7 @@ async _ => {
         method: 'GET',
     });
     response.json();
-    console.log(response);
+    console.log("TEST");
 };
 
 
