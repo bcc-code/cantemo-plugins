@@ -31,8 +31,9 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 // console.log(group_name)
 
 
-var gropu_name = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',});
+var group_name = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',});
 
+setTimeout(console.log(group_name), 5000)
 
 //var body = await response.json();
 
