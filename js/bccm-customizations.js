@@ -12,15 +12,18 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 // setTimeout(console.log(group_name), 5000)
 
 //fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(response => response.json() && console.log(response));
-var button_test = getElementById("test1234")
-button_test.addEventListener('click', async _ => {
-    const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
-        method: 'GET',
-    });
-    var body = await response.json();
-    console.log(body);
-});
 
+function test0987(){
+    var button_test = getElementById("test1234")
+    button_test.addEventListener('click', async _ => {
+        const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
+            method: 'GET',
+        });
+        var body = await response.json();
+        console.log(body);
+    });
+};
+setTimeout(test0987(), 5000)
 
 // metadata_groups.json().then(data => {
 //     console.log(data)
