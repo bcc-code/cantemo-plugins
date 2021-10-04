@@ -23,13 +23,11 @@ mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 # cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
 
-find $DIR/js ! -name bccm-example-config.js -exec cp -t $PORTAL_ROOT/portal_media/js {} +
-
 if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
 else 
     echo "$CONFIG_FILE does not exist."
-    cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js
+    cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js/bccm-config.js
 fi
 
 echo "Done."
