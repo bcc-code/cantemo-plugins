@@ -18,7 +18,9 @@ var metadata_groups = async response2 => {
         method: 'GET'
     })
 };
-console.log(metadata_groups.json());
+metadata_groups.json().then(data => {
+    console.log(data)
+});
 
 
 //var body = await response.json();
