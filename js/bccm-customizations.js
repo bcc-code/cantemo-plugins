@@ -7,33 +7,11 @@ console.log(`bccm-customizations.js executing`)
 
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-// function httpGet(theUrl)
-// {
-//     var xmlHttp = new XMLHttpRequest();
-//     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-//     xmlHttp.send( null );
-//     return xmlHttp.responseText;
-// }
-// setTimeout(console.log("sending GET request"), 10000);
-// setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 10000);
-// setTimeout(console.log(xmlHttp.responseText), 11000);
 
-
-
-// const http = new XMLHttpRequest()
-
-// http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
-// http.send()
-
-// http.onload = () => console.log(http.responseText)
-
-// console.log("group name:")
-// console.log(group_name)
-
-
-var group_name = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',});
+var group_name = await respose.json(fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}));
 
 setTimeout(console.log(group_name), 5000)
+
 
 //var body = await response.json();
 
