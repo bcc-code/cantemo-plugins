@@ -27,7 +27,7 @@ http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata
 http.send()
 
 http.onload = () => console.log(http.responseText)
-var group_name = http.responseText.group_name
+setTimeout(var group_name = http.responseText.group_name, 4900)
 
 setTimeout(console.log("group name:"), 5000)
 setTimeout(console.log(group_name), 5100)
