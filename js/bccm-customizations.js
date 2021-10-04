@@ -13,13 +13,20 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 
 //fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(response => response.json() && console.log(response));
 
+// fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
+//   .then((response) => response.json())
+//   .then((data) => {
+//   	//console.log(data);
+//     let group_name = data.group_name;
+// })
+// setTimeout(console.log(group_name), 5000)
+
+var obj;
+
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
-  .then((response) => response.json())
-  .then((data) => {
-  	//console.log(data);
-    let group_name = data.group_name;
-}) 
-setTimeout(console.log(group_name), 5000)
+  .then(res => res.json())
+  .then(data => obj = data)
+  .then(() => console.log(obj))
 
 // async _ => {
 //     const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
