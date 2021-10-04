@@ -8,16 +8,23 @@ console.log(`bccm-customizations.js executing`)
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
-setTimeout(console.log("sending GET request"), 10000);
-setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 10000);
-setTimeout(console.log(xmlHttp.responseText), 11000);
+// function httpGet(theUrl)
+// {
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+//     xmlHttp.send( null );
+//     return xmlHttp.responseText;
+// }
+// setTimeout(console.log("sending GET request"), 10000);
+// setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 10000);
+// setTimeout(console.log(xmlHttp.responseText), 11000);
+
+const http = new XMLHttpRequest()
+
+http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
+http.send()
+
+http.onload = () => console.log(http.responseText)
 
 //generates Button and adds EventListener
 
