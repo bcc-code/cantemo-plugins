@@ -11,8 +11,8 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 
 // setTimeout(console.log(group_name), 5000)
 
-fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(response => response.json());
-setTimeout(console.log(response), 5000)
+fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(response => response.json() && console.log(response));
+
 //var body = await response.json();
 
 //generates Button and adds EventListener
