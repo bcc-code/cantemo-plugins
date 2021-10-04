@@ -7,7 +7,6 @@ console.log(`bccm-customizations.js executing`)
 
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-
 // function httpGet(theUrl)
 // {
 //     var xmlHttp = new XMLHttpRequest();
@@ -21,17 +20,21 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 
 
 
-const http = new XMLHttpRequest()
+// const http = new XMLHttpRequest()
 
-http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
-http.send()
+// http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
+// http.send()
 
-http.onload = () => console.log(http.responseText)
+// http.onload = () => console.log(http.responseText)
 
 // console.log("group name:")
 // console.log(group_name)
 
 
+var gropu_name = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',});
+
+
+//var body = await response.json();
 
 //generates Button and adds EventListener
 
