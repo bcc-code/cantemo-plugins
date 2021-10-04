@@ -26,7 +26,7 @@ const http = new XMLHttpRequest()
 http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
 http.send()
 
-http.onload = () => var group_name = http.responseText.group_name
+http.onload = () => const group_name = http.responseText.group_name
 //console.log(http.responseText)
 
 console.log("group name:")
