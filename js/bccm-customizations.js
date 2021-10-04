@@ -21,12 +21,13 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 
 
 
- const http = new XMLHttpRequest()
+const http = new XMLHttpRequest()
 
- http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
- http.send()
+http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
+http.send()
 
- http.onload = () => console.log(http.responseText) && var group_name = http.responseText.group_name
+http.onload = () => console.log(http.responseText)
+var group_name = http.responseText.group_name
 
 console.log("group name:")
 console.log(group_name)
