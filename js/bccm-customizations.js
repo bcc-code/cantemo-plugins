@@ -26,7 +26,9 @@ var obj;
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
   .then(res => res.json())
   .then(data => obj = data)
-  .then(() => console.log(obj))
+  .then(() => console.log(obj.group_name))
+
+
 
 // async _ => {
 //     const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
