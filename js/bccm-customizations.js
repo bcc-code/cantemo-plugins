@@ -18,7 +18,7 @@ async metadata_groups => {
         method: 'GET'
     })
 };
-console.log(response.json());
+console.log(metadata_groups.json());
 
 
 //var body = await response.json();
