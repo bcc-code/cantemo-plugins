@@ -26,11 +26,10 @@ const http = new XMLHttpRequest()
 http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
 http.send()
 
-http.onload = () => const group_name = http.responseText.group_name
-//console.log(http.responseText)
+http.onload = () => console.log(http.responseText)
 
-console.log("group name:")
-console.log(group_name)
+// console.log("group name:")
+// console.log(group_name)
 
 
 
