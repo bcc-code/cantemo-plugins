@@ -17,6 +17,7 @@ function httpGet(theUrl)
 }
 setTimeout(console.log("sending GET request"), 10000);
 setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 10000);
+setTimeout(console.log(xmlHttp.responseText), 11000);
 
 //generates Button and adds EventListener
 
