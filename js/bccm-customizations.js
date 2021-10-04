@@ -21,12 +21,12 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 
 
 
-// const http = new XMLHttpRequest()
+ const http = new XMLHttpRequest()
 
-// http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
-// http.send()
+ http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
+ http.send()
 
-// http.onload = () => console.log(http.responseText)
+ http.onload = () => console.log(http.responseText)
 
 //generates Button and adds EventListener
 
