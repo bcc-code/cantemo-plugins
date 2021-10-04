@@ -15,8 +15,8 @@ function httpGet(theUrl)
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
-
-setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 3000);
+setTimeout(console.log("sending GET request"), 4000);
+setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 4000);
 
 //generates Button and adds EventListener
 
