@@ -3,11 +3,20 @@ import config from '/sitemedia/js/bccm-example-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 
-
 // var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+setTimeout(httpGet('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/'), 3000);
 
 //generates Button and adds EventListener
 

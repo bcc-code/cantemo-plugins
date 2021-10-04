@@ -26,7 +26,7 @@
 
 <br/>
 
-- ## CHALANGE
+- ## METADATA
     - generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
 
 <br/>
