@@ -17,8 +17,8 @@ fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
   .then((response) => response.json())
   .then((data) => {
   	console.log(data);
-  })
-
+})
+console.log(data);
 // async _ => {
 //     const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
 //         method: 'GET',
