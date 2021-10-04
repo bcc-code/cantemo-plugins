@@ -26,11 +26,11 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
  http.open("GET", '/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
  http.send()
 
- http.onload = () => console.log(http.responseText)
+ http.onload = () => console.log(http.responseText) && var group_name = http.responseText.group_name
+
+
 
 //generates Button and adds EventListener
-
-
 
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroups.length; i++) {
