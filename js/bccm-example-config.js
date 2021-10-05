@@ -12,7 +12,7 @@ export default {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.green,
-                        metadata: metadata.FILM
+                        metadata: metadata.film
                     },
                     {
                         label: `test1`,
@@ -46,13 +46,13 @@ export default {
                         label: `molestie leo`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.red,
-                        metadata: metadata.TEST
+                        metadata: metadata.test
                     },
                     {
                         label: `imperdiet eget`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.turquoise,
-                        metadata: metadata.FILM
+                        metadata: metadata.film
                     },
                     {
                         label: `neque laoreet`,
@@ -76,13 +76,13 @@ export default {
                         label: `tellus sed`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.cyan,
-                        metadata: metadata.TEST
+                        metadata: metadata.test
                     },
                     {
                         label: `porta tellus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.flamingo,
-                        metadata: metadata.FILM
+                        metadata: metadata.film
                     }
                 ]
             }

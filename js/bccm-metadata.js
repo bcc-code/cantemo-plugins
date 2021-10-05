@@ -3,5 +3,5 @@ export default {
     melga: "melga",
     milga: "milga",
     molga: "molga",
-    TEST: "TEST"
+    test: "TEST"
 };
