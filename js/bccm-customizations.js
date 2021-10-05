@@ -7,77 +7,55 @@ console.log(`bccm-customizations.js executing`)
 
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-// var group_name = await respose.json(fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}));
+var metadata_obj;
 
-// setTimeout(console.log(group_name), 5000)
-
-//fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {method: 'GET',}).then(response => response.json() && console.log(response));
-
-// fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
-//   .then((response) => response.json())
-//   .then((data) => {
-//   	//console.log(data);
-//     let group_name = data.group_name;
-// })
-// setTimeout(console.log(group_name), 5000)
-
-var obj;
 
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
   .then(res => res.json())
-  .then(data => obj = data)
-  .then(() => console.log(obj.group_name))
+  .then(data => metadata_obj = data)
+  .then(() => console.log(metadata_obj.group_name))
 
-
-
-// async _ => {
-//     const response = await fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/', {
-//         method: 'GET',
-//     });
-//     response.json();
-//     console.log(response);
-// };
-
-
-//var body = await response.json();
+// maetadatagroup = metadata_obj.group_name
 
 //generates Button and adds EventListener
 
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroups.length; i++) {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
-            let buttonConfig = FilterdUserGroups[i].buttons[x];
-            let ManualRuleButton = document.createElement("button");
-            ManualRuleButton.innerHTML = buttonConfig.label;
-            ManualRuleButton.type = "button";
-            ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
-            document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
+            if(buttonConfig.metadata == metadata_obj.group_name){
+                let buttonConfig = FilterdUserGroups[i].buttons[x];
+                let ManualRuleButton = document.createElement("button");
+                ManualRuleButton.innerHTML = buttonConfig.label;
+                ManualRuleButton.type = "button";
+                ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
+                document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
 
-            ManualRuleButton.onclick = function() {
-                this.innerHTML = "working..."
-                this.disabled = true;
-                let THIS = this;
-                setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
-            }
+                ManualRuleButton.onclick = function() {
+                    this.innerHTML = "working..."
+                    this.disabled = true;
+                    let THIS = this;
+                    setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
+                }
 
-            ManualRuleButton.addEventListener('click', async _ => {
-                const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
-                    method: 'POST',
-                    headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-                    body: new URLSearchParams({
-                        'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                        'process_id': buttonConfig.process_id,
-                    })
+                ManualRuleButton.addEventListener('click', async _ => {
+                    const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
+                        method: 'POST',
+                        headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+                        body: new URLSearchParams({
+                            'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                            'process_id': buttonConfig.process_id,
+                        })
+                    });
+                    if (!response.ok) {
+                        console.error('Didnt succeed!', response);
+                        PopupAnimateIN("1 item already being processed", true)
+                    }
+                    else {
+                        console.log('Completed!', response);
+                        PopupAnimateIN("1 item queued for processing!", false)
+                    }
                 });
-                if (!response.ok) {
-                    console.error('Didnt succeed!', response);
-                    PopupAnimateIN("1 item already being processed", true)
-                }
-                else {
-                    console.log('Completed!', response);
-                    PopupAnimateIN("1 item queued for processing!", false)
-                }
-            });
+            }
         } 
     }
 }
@@ -91,6 +69,8 @@ function filterUserGroups(userGroup) {
         }
     } 
 }
+
+
 
 //popup function
 
