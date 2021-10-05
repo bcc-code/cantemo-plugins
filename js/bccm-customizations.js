@@ -6,10 +6,7 @@ var FilterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroup
 
 var metadata_obj;
 
-
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
-
-// maetadatagroup = metadata_obj.group_name
 
 //generates Button and adds EventListener
 
@@ -30,7 +27,6 @@ function addManualRuleButton() {
                     let THIS = this;
                     setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
                 }
-
                 ManualRuleButton.addEventListener('click', async _ => {
                     const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
