@@ -53,10 +53,8 @@ function addManualRuleButton() {
                     }
                 });
                 console.log("button create")
-                return
             }else{
                 console.log("button not create")
-                return
             }
         } 
     }
