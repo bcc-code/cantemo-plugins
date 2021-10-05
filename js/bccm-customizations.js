@@ -1,18 +1,13 @@
 // import defaultconfig from '/sitemedia/js/test-config.js';
-import config from '/sitemedia/js/bccm-example-config.js';
+import config from '/sitemedia/js/bccm-config.js';
 
 console.log(`bccm-customizations.js executing`) 
-
-// var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 var metadata_obj;
 
-
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
-
-// maetadatagroup = metadata_obj.group_name
 
 //generates Button and adds EventListener
 
@@ -33,7 +28,6 @@ function addManualRuleButton() {
                     let THIS = this;
                     setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
                 }
-
                 ManualRuleButton.addEventListener('click', async _ => {
                     const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
@@ -94,5 +88,11 @@ function PopupAnimateOUT() {
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
+
+$('#elementontop').click(e => {
+    $('#elementontop').hide();
+    $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
+    $('#elementontop').show();
+});
 
 setTimeout(addManualRuleButton, 3000);

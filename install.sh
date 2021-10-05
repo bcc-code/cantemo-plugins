@@ -29,7 +29,7 @@ if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
 else 
     echo "$CONFIG_FILE does not exist."
-    cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js
+    cp $DIR/js/bccm-example-config.js $PORTAL_ROOT/portal_media/js/bccm-config.js
 fi
 
 echo "Done."
