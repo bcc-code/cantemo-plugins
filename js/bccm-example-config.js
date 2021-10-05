@@ -1,6 +1,6 @@
 import colour from '/sitemedia/js/bccm-colours.js';
 import group from '/sitemedia/js/bccm-groups.js';
-import metadata from '';
+import metadata from '/sitemedia/js/bccm-metadata.js';
 
 export default {
     ruleButtonPlugin: {
