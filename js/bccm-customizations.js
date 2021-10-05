@@ -52,6 +52,8 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
+                console.log("3 " + FilterdUserGroup[i].buttons[x].metadata)
+                console.log("4 " + metadata_obj.group_name)
 
             }
             
