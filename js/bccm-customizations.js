@@ -20,9 +20,6 @@ function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroups.length; i++) {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
             if(FilterdUserGroups[i].buttons[x].metadata == metadata_obj.group_name){
-
-                console.log("TEST: " + FilterdUserGroups[i].buttons[x].metadata)
-
                 let buttonConfig = FilterdUserGroups[i].buttons[x];
                 let ManualRuleButton = document.createElement("button");
                 ManualRuleButton.innerHTML = buttonConfig.label;
@@ -55,11 +52,6 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
-                console.log("button create")
-            }else{
-                console.log("1: " + FilterdUserGroups[i].buttons[x].metadata)
-                console.log("2: " + metadata_obj.group_name)
-                console.log("button not create")
             }
         } 
     }
