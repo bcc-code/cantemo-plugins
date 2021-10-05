@@ -14,12 +14,7 @@ function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroup.length; i++) {
         for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
 
-            if(FilterdUserGroup[i].buttons[x].metadata != metadata_obj.group_name){
-
-                console.log("1 NO: " + FilterdUserGroup[i].buttons[x].metadata)
-                console.log("2 NO: " + metadata_obj.group_name)
-
-            }else if(FilterdUserGroup[i].buttons[x].metadata != ""){
+            if(FilterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name || FilterdUserGroup[i].buttons[x].metadata == ""){
 
                 let buttonConfig = FilterdUserGroup[i].buttons[x];
                 let ManualRuleButton = document.createElement("button");
@@ -57,39 +52,8 @@ function addManualRuleButton() {
 
             }else{
 
-                let buttonConfig = FilterdUserGroup[i].buttons[x];
-                let ManualRuleButton = document.createElement("button");
-                ManualRuleButton.innerHTML = buttonConfig.label;
-                ManualRuleButton.type = "button";
-                ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
-                document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
-
-                ManualRuleButton.onclick = function() {
-                    this.innerHTML = "working..."
-                    this.disabled = true;
-                    let THIS = this;
-                    setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
-                }
-                ManualRuleButton.addEventListener('click', async _ => {
-                    const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
-                        method: 'POST',
-                        headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-                        body: new URLSearchParams({
-                            'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                            'process_id': buttonConfig.process_id,
-                        })
-                    });
-                    if (!response.ok) {
-                        console.error('Didnt succeed!', response);
-                        PopupAnimateIN("1 item already being processed", true)
-                    }
-                    else {
-                        console.log('Completed!', response);
-                        PopupAnimateIN("1 item queued for processing!", false)
-                    }
-                });
-                console.log("11 YES " + FilterdUserGroup[i].buttons[x].metadata)
-                console.log("22 YES " + metadata_obj.group_name)
+                console.log("1 NO: " + FilterdUserGroup[i].buttons[x].metadata)
+                console.log("2 NO: " + metadata_obj.group_name)
 
             }
             
