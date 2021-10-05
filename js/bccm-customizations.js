@@ -9,7 +9,7 @@ var metadata_obj;
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
 
 //generates Button and adds EventListener
-
+//test test test
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroup.length; i++) {
         for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
