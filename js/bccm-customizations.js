@@ -14,7 +14,7 @@ function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroup.length; i++) {
         for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
 
-            if(FilterdUserGroup[i].buttons[x].metadata != metadata_obj.group_name || FilterdUserGroup[i].buttons[x].metadata == ""){
+            if(FilterdUserGroup[i].buttons[x].metadata != metadata_obj.group_name || FilterdUserGroup[i].buttons[x].metadata != ""){
 
                 console.log("1 NO: " + FilterdUserGroup[i].buttons[x].metadata)
                 console.log("2 NO: " + metadata_obj.group_name)
