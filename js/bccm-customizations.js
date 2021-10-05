@@ -13,7 +13,14 @@ fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(re
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroup.length; i++) {
         for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
-            if(FilterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name){
+
+            if(FilterdUserGroup[i].buttons[x].metadata != metadata_obj.group_name){
+
+                console.log("1 " + FilterdUserGroup[i].buttons[x].metadata)
+                console.log("2 " + metadata_obj.group_name)
+
+            }else{
+
                 let buttonConfig = FilterdUserGroup[i].buttons[x];
                 let ManualRuleButton = document.createElement("button");
                 ManualRuleButton.innerHTML = buttonConfig.label;
@@ -45,7 +52,9 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
+
             }
+            
         } 
     }
 }
