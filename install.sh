@@ -21,7 +21,7 @@ fi
 
 mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-# cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
+cp -r $DIR/js/* $PORTAL_ROOT/portal_media/js
 
 if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
