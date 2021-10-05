@@ -2,7 +2,7 @@ import config from '/sitemedia/js/bccm-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 
-var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+var FilterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
 var metadata_obj;
 
@@ -11,10 +11,10 @@ fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(re
 //generates Button and adds EventListener
 
 function addManualRuleButton() {
-    for (var i = 0; i < FilterdUserGroups.length; i++) {
-        for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
-            if(FilterdUserGroups[i].buttons[x].metadata == metadata_obj.group_name){
-                let buttonConfig = FilterdUserGroups[i].buttons[x];
+    for (var i = 0; i < FilterdUserGroup.length; i++) {
+        for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
+            if(FilterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name){
+                let buttonConfig = FilterdUserGroup[i].buttons[x];
                 let ManualRuleButton = document.createElement("button");
                 ManualRuleButton.innerHTML = buttonConfig.label;
                 ManualRuleButton.type = "button";
@@ -87,11 +87,5 @@ function PopupAnimateOUT() {
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
-
-$('#elementontop').click(e => {
-    $('#elementontop').hide();
-    $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
-    $('#elementontop').show();
-});
 
 setTimeout(addManualRuleButton, 3000);
