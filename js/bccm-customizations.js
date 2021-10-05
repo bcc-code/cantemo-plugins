@@ -10,10 +10,7 @@ var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGrou
 var metadata_obj;
 
 
-fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/')
-  .then(res => res.json())
-  .then(data => metadata_obj = data)
-  .then(() => console.log(metadata_obj.group_name))
+fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data).then(() => console.log(metadata_obj.group_name));
 
 // maetadatagroup = metadata_obj.group_name
 
