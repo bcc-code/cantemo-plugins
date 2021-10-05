@@ -52,6 +52,9 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
+                return
+            }else{
+                return
             }
         } 
     }
