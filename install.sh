@@ -18,14 +18,15 @@ if [ "X${DIR}" = "X" ]; then
     exit 1
 fi
 
-mkdir -p $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-cp -r $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+mkdir -pv $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+cp -rv $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
+cp -rv $DIR/js/* $PORTAL_ROOT/portal_media/js/
 
 if [ -f "$CONFIG_FILE" ]; then
     echo "$CONFIG_FILE exists."
 else 
     echo "$CONFIG_FILE does not exist."
-    cp $DIR/js/bccm-example-config.js $CONFIG_FILE
+    cp -v $DIR/js/bccm-example-config.js $CONFIG_FILE
 fi
 
 echo "Done."
