@@ -1,5 +1,5 @@
 export default { 
-    film: "FILM",
+    film: "Film",
     melga: "melga",
     milga: "milga",
     molga: "molga",
