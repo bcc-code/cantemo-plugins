@@ -57,6 +57,7 @@ function addManualRuleButton() {
                 });
                 console.log("button create")
             }else{
+                console.log("TEST: " + FilterdUserGroups[i].buttons[x].metadata)
                 console.log("button not create")
             }
         } 
