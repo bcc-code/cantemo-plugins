@@ -19,7 +19,7 @@ fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(re
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroups.length; i++) {
         for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
-            if(buttonConfig.metadata == metadata_obj.group_name){
+            if(FilterdUserGroups[i].buttons[x].metadata == metadata_obj.group_name){
                 let buttonConfig = FilterdUserGroups[i].buttons[x];
                 let ManualRuleButton = document.createElement("button");
                 ManualRuleButton.innerHTML = buttonConfig.label;
