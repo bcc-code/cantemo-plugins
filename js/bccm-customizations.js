@@ -1,6 +1,12 @@
-import config from '/sitemedia/js/bccm-customizations-config.js';
+import config from '/sitemedia/js/bccm-config.js';
 
 console.log(`bccm-customizations.js executing`) 
+
+
+// var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+
+var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+
 
 //generates Button and adds EventListener
 
@@ -45,8 +51,6 @@ function addManualRuleButton() {
 
 //filters out the user groups from the config file
 
-let FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
-
 function filterUserGroups(userGroup) {
     for (var i = 0;  i < manualRulePluginContext.user_groups.length; i++) {
         if (userGroup.name == manualRulePluginContext.user_groups[i] ) {
@@ -80,11 +84,5 @@ function PopupAnimateOUT() {
     popup.classList.remove("show");
     popup.classList.add("remove");
 }
-
-// function add_z_index() {
-//     let MediaViewItemTechMetadataTop = document.getElementsByClassName("MediaViewItemTechMetadataTop")[0];
-//     MediaViewItemTechMetadataTop.setAttribute("style", "z-index: 9000");
-// }
-// setTimeout(add_z_index, 4000);  
 
 setTimeout(addManualRuleButton, 3000);

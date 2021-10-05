@@ -1,18 +1,35 @@
 
-TODO:
-- DONE Create buttons with javascript 
-- DONE Get user role from cantemo
-- DONE Get item id from cantemo
-- DONE Create a startManualRule function which takes a process_id 
-- DONE Create buttons based on config file.
+# TODO:
+- ✅ Create buttons with javascript 
+- ✅ Get user role from cantemo
+- ✅ Get item id from cantemo
+- ✅ Create a startManualRule function which takes a process_id 
+- ✅ Create buttons based on config file.
 
 - Feedback: Show that the process has started somehow
   - Show progress (api call to get status? call it every few seconds?)
 
-- DONE Clean up names (no myplugin)
+- ✅ Clean up names (no myplugin)
 
-- generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
+<br/>
 
+- ## CONFIGFILES
+    - ✅ add example config file
+
+    - ### Make it so the config file only gets instaled when tere is no other config file present
+        - ✅ make a vaiable that defines the path to the config file that you want to use
+        - ✅ check if the config file that is defined in the variable exists
+        - ✅ if there is instal it
+        - ✅ if not then instal the example file
+        - make it so that the bccm-customizations.js file imports the right config (if ther is one specified then use it if not use the default)
+
+
+<br/>
+
+- ## CHALANGE
+    - generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
+
+<br/>
 
 ## The args object
 
