@@ -9,15 +9,15 @@ var metadata_obj;
 fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
 
 //generates Button and adds EventListener
-//test test test
+
 function addManualRuleButton() {
     for (var i = 0; i < FilterdUserGroup.length; i++) {
         for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
 
             if(FilterdUserGroup[i].buttons[x].metadata != metadata_obj.group_name){
 
-                console.log("1 " + FilterdUserGroup[i].buttons[x].metadata)
-                console.log("2 " + metadata_obj.group_name)
+                console.log("1 NO: " + FilterdUserGroup[i].buttons[x].metadata)
+                console.log("2 NO: " + metadata_obj.group_name)
 
             }else{
 
@@ -52,8 +52,8 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
-                console.log("3 " + FilterdUserGroup[i].buttons[x].metadata)
-                console.log("4 " + metadata_obj.group_name)
+                console.log("1 YES " + FilterdUserGroup[i].buttons[x].metadata)
+                console.log("2 YES " + metadata_obj.group_name)
 
             }
             

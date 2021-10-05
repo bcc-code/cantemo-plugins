@@ -12,7 +12,7 @@ export default {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.green,
-                        metadata: metadata.film,
+                        metadata: ""
                     },
                     {
                         label: `test1`,
