@@ -52,8 +52,10 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
+                console.log("button create")
                 return
             }else{
+                console.log("button not create")
                 return
             }
         } 
