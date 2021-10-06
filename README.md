@@ -6,7 +6,7 @@
 - ✅ Create a startManualRule function which takes a process_id 
 - ✅ Create buttons based on config file.
 - ✅ Clean up names (no myplugin)
-
+-[ ]
 <br/>
 
 ## METADATA
