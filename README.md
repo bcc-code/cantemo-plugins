@@ -5,29 +5,17 @@
 - ✅ Get item id from cantemo
 - ✅ Create a startManualRule function which takes a process_id 
 - ✅ Create buttons based on config file.
-
-- Feedback: Show that the process has started somehow
-  - Show progress (api call to get status? call it every few seconds?)
-
 - ✅ Clean up names (no myplugin)
 
 <br/>
 
-- ## CONFIGFILES
-    - ✅ add example config file
-
-    - ### Make it so the config file only gets instaled when tere is no other config file present
-        - ✅ make a vaiable that defines the path to the config file that you want to use
-        - ✅ check if the config file that is defined in the variable exists
-        - ✅ if there is instal it
-        - ✅ if not then instal the example file
-        - make it so that the bccm-customizations.js file imports the right config (if ther is one specified then use it if not use the default)
-
+## METADATA
+- ✅ generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
 
 <br/>
 
-- ## CHALANGE
-    - generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
+## BUGS
+- when portal window is in mobile view you can´t click the buttons
 
 <br/>
 

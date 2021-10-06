@@ -2,49 +2,50 @@ import config from '/sitemedia/js/bccm-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 
+var FilterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-// var FilterdUserGroups = defaultconfig.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+var metadata_obj;
 
-var FilterdUserGroups = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
-
+fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
 
 //generates Button and adds EventListener
 
 function addManualRuleButton() {
-    for (var i = 0; i < FilterdUserGroups.length; i++) {
-        for (var x = 0; x < FilterdUserGroups[i].buttons.length; x++) {
-            let buttonConfig = FilterdUserGroups[i].buttons[x];
-            let ManualRuleButton = document.createElement("button");
-            ManualRuleButton.innerHTML = buttonConfig.label;
-            ManualRuleButton.type = "button";
-            ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
-            document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
+    for (var i = 0; i < FilterdUserGroup.length; i++) {
+        for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
+            if(FilterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name){
+                let buttonConfig = FilterdUserGroup[i].buttons[x];
+                let ManualRuleButton = document.createElement("button");
+                ManualRuleButton.innerHTML = buttonConfig.label;
+                ManualRuleButton.type = "button";
+                ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
+                document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
 
-            ManualRuleButton.onclick = function() {
-                this.innerHTML = "working..."
-                this.disabled = true;
-                let THIS = this;
-                setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
-            }
-
-            ManualRuleButton.addEventListener('click', async _ => {
-                const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
-                    method: 'POST',
-                    headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
-                    body: new URLSearchParams({
-                        'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                        'process_id': buttonConfig.process_id,
-                    })
+                ManualRuleButton.onclick = function() {
+                    this.innerHTML = "working..."
+                    this.disabled = true;
+                    let THIS = this;
+                    setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
+                }
+                ManualRuleButton.addEventListener('click', async _ => {
+                    const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
+                        method: 'POST',
+                        headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
+                        body: new URLSearchParams({
+                            'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
+                            'process_id': buttonConfig.process_id,
+                        })
+                    });
+                    if (!response.ok) {
+                        console.error('Didnt succeed!', response);
+                        PopupAnimateIN("1 item already being processed", true)
+                    }
+                    else {
+                        console.log('Completed!', response);
+                        PopupAnimateIN("1 item queued for processing!", false)
+                    }
                 });
-                if (!response.ok) {
-                    console.error('Didnt succeed!', response);
-                    PopupAnimateIN("1 item already being processed", true)
-                }
-                else {
-                    console.log('Completed!', response);
-                    PopupAnimateIN("1 item queued for processing!", false)
-                }
-            });
+            }
         } 
     }
 }
@@ -58,6 +59,8 @@ function filterUserGroups(userGroup) {
         }
     } 
 }
+
+
 
 //popup function
 
