@@ -47,14 +47,6 @@ function addManualRuleButton() {
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
-                console.log("1 YES " + FilterdUserGroup[i].buttons[x].metadata)
-                console.log("2 YES " + metadata_obj.group_name)
-
-            }else{
-
-                console.log("1 NO: " + FilterdUserGroup[i].buttons[x].metadata)
-                console.log("2 NO: " + metadata_obj.group_name)
-
             }
         } 
     }
