@@ -89,7 +89,7 @@ function PopupAnimateOUT() {
     popup.classList.add("remove");
 }
 
-function waitForElm(selector) {
+function waitForElm(selector, callback) {
     return new Promise(resolve => {
         if (document.querySelector(selector)) {
             return resolve(document.querySelector(selector));
@@ -99,6 +99,7 @@ function waitForElm(selector) {
             if (document.querySelector(selector)) {
                 resolve(document.querySelector(selector));
                 observer.disconnect();
+                callback();
             }
         });
 
@@ -109,6 +110,7 @@ function waitForElm(selector) {
     });
 }
 
-waitForElm('#ManualRuleButtonDIV').then(elm => console.log("ManjualRuleBUttonDIV was created"));
+
+waitForElm('#ManualRuleButtonDIV').then(elm => console.log("ManjualRuleBUttonDIV was created"), addManualRuleButton());
 
 //setTimeout(addManualRuleButton, 3000);
