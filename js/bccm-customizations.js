@@ -109,6 +109,6 @@ function waitForElm(selector) {
     });
 }
 
-waitForElm('#ManualRuleButtonDIV').then(elm => console.log(elm.textContent));
+waitForElm('#ManualRuleButtonDIV').then(elm => console.log("ManjualRuleBUttonDIV was created"));
 
 //setTimeout(addManualRuleButton, 3000);
