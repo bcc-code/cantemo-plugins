@@ -117,7 +117,7 @@ function waitForElm(selector, callback) {
 //     console.log("callback worked")
 // }
 
-waitForElm(function(){
+waitForElm('#ManualRuleButtonDIV', function(){
     addManualRuleButton();
 });
 
