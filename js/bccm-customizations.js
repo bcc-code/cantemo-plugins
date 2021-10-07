@@ -111,6 +111,10 @@ function waitForElm(selector, callback) {
 }
 
 
-waitForElm('#ManualRuleButtonDIV').then(elm => console.log("ManjualRuleBUttonDIV was created"), addManualRuleButton());
+waitForElm('#ManualRuleButtonDIV').then(elm => console.log("ManjualRuleBUttonDIV was created"), msg());
+
+function msg() {
+    console.log("callback worked")
+}
 
 //setTimeout(addManualRuleButton, 3000);
