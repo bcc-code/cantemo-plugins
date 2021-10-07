@@ -110,16 +110,6 @@ function waitForElm(selector, callback) {
     });
 }
 
-
-// waitForElm('#ManualRuleButtonDIV').then(elm => console.log("ManjualRuleBUttonDIV was created"), msg());
-
-// function msg() {
-//     console.log("callback worked")
-// }
-
 waitForElm('#ManualRuleButtonDIV', function(){
     addManualRuleButton();
 });
-
-
-//setTimeout(addManualRuleButton, 3000);
