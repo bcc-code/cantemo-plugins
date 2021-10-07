@@ -69,24 +69,24 @@ function PopupAnimateIN(msg, isError) {
     if (isError) {
         var popup = document.getElementById("popup-id");
         popup.classList.add("show");
-        popup.classList.remove("remove");
-        setTimeout(PopupAnimateOUT, 1500);
+        popup.classList.remove("hide");
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
+        setTimeout(PopupAnimateOUT, 1500);
     } else {
         var popup = document.getElementById("popup-id");
         popup.classList.add("show");
-        popup.classList.remove("remove");
-        setTimeout(PopupAnimateOUT, 1500);
+        popup.classList.remove("hide");
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
+        setTimeout(PopupAnimateOUT, 1500);
     }
 }
 
 function PopupAnimateOUT() {
     var popup = document.getElementById("popup-id");
     popup.classList.remove("show");
-    popup.classList.add("remove");
+    popup.classList.add("hide");
 }
 
 function waitForElm(selector, callback) {
