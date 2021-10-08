@@ -34,7 +34,7 @@ export default {
                 ]
             },
             {
-                name: group.special_all,
+                name: group.specialAll,
                 buttons: [
                     {
                         label: `Send to BrunstadTV`,

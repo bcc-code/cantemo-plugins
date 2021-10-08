@@ -1,10 +1,10 @@
 <script type="text/javascript">
 
-let user_groups_json = '{{ user_groups|safe }}'
+let userGroupsJson = '{{ user_groups|safe }}'
 let item_id = '{{ item_id }}'
 
 var manualRulePluginContext = {
-    user_groups: JSON.parse(user_groups_json),
+    user_groups: JSON.parse(userGroupsJson),
     group_name: '{{ group_name }}',
     item_id: '{{ item_id }}'
 }
