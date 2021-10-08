@@ -23,22 +23,12 @@ function addManualRuleButton() {
                 manualRuleButton.setAttribute("class", buttonConfig.button_color);
                 document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
 
-                // manualRuleButton.onclick = function() {
-                //     this.innerHTML = "working..."
-                //     this.disabled = true;
-                //     let THIS = this;
-                //     setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
-                // }
-                let THIS = this;
-
-                function buttonMsg(msg) {
-                    THIS.innerHTML = msg;
-                    THIS.disabled = true;
-                    setTimeout(function(){THIS.disabled = false; THIS.innerHTML = buttonConfig.label;}, 5000);
+                manualRuleButton.onclick = function() {
+                    this.innerHTML = "working..."
+                    this.disabled = true;
+                    let THIS = this;
+                    setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
                 }
-                    
-
-
                 manualRuleButton.addEventListener('click', async _ => {
                     const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
@@ -50,11 +40,9 @@ function addManualRuleButton() {
                     });
                     if (!response.ok) {
                         console.error('Didnt succeed!', response);
-                        buttonMsg('FAILED...');
                         PopupAnimateIN("1 item already being processed", true)
                     } else {
                         console.log('Completed!', response);
-                        buttonMsg('WORKING...');
                         PopupAnimateIN("1 item queued for processing!", false)
                     }
                 });
@@ -72,6 +60,8 @@ function filterUserGroups(userGroup) {
         }
     } 
 }
+
+
 
 //popup function
 
