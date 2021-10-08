@@ -11,13 +11,13 @@ export default {
                     {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.green,
+                        button_color: color.green,
                         metadata: metadata.film
                     },
                     {
                         label: `test1`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.yellow,
+                        button_color: color.yellow,
                         metadata: metadata.melga
                     }
                 ]
@@ -28,7 +28,7 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.blue,
+                        button_color: color.blue,
                         metadata: metadata.milga
                     }
                 ]
@@ -39,49 +39,49 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.orange,
+                        button_color: color.orange,
                         metadata: metadata.molga
                     },
                     {
                         label: `molestie leo`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.red,
+                        button_color: color.red,
                         metadata: metadata.test
                     },
                     {
                         label: `imperdiet eget`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.turquoise,
+                        button_color: color.turquoise,
                         metadata: metadata.film
                     },
                     {
                         label: `neque laoreet`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.pink,
+                        button_color: color.pink,
                         metadata: metadata.melga
                     },
                     {
                         label: `Vivamus`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.blue,
+                        button_color: color.blue,
                         metadata: metadata.milga
                     },
                     {
                         label: `maximus eu`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.lila,
+                        button_color: color.lila,
                         metadata: metadata.molga
                     },
                     {
                         label: `tellus sed`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.cyan,
+                        button_color: color.cyan,
                         metadata: metadata.test
                     },
                     {
                         label: `porta tellus`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        buttonColor: color.flamingo,
+                        button_color: color.flamingo,
                         metadata: metadata.film
                     }
                 ]
