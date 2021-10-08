@@ -11,13 +11,13 @@ export default {
                     {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.green,
+                        buttonColor: color.green,
                         metadata: metadata.film
                     },
                     {
                         label: `test1`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.yellow,
+                        buttonColor: color.yellow,
                         metadata: metadata.melga
                     }
                 ]
@@ -27,8 +27,8 @@ export default {
                 buttons: [
                     {
                         label: `Send to BrunstadTV`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.blue,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.blue,
                         metadata: metadata.milga
                     }
                 ]
@@ -38,50 +38,50 @@ export default {
                 buttons: [
                     {
                         label: `Send to BrunstadTV`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.orange,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.orange,
                         metadata: metadata.molga
                     },
                     {
                         label: `molestie leo`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.red,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.red,
                         metadata: metadata.test
                     },
                     {
                         label: `imperdiet eget`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.turquoise,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.turquoise,
                         metadata: metadata.film
                     },
                     {
                         label: `neque laoreet`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.pink,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.pink,
                         metadata: metadata.melga
                     },
                     {
                         label: `Vivamus`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.blue,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.blue,
                         metadata: metadata.milga
                     },
                     {
                         label: `maximus eu`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.lila,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.lila,
                         metadata: metadata.molga
                     },
                     {
                         label: `tellus sed`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.cyan,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.cyan,
                         metadata: metadata.test
                     },
                     {
                         label: `porta tellus`,
-                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_color: color.flamingo,
+                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        buttonColor: color.flamingo,
                         metadata: metadata.film
                     }
                 ]

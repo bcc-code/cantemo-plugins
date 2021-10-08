@@ -20,7 +20,7 @@ function addManualRuleButton() {
                 let manualRuleButton = document.createElement("button");
                 manualRuleButton.innerHTML = buttonConfig.label;
                 manualRuleButton.type = "button";
-                manualRuleButton.setAttribute("class", buttonConfig.button_color);
+                manualRuleButton.setAttribute("class", buttonConfig.buttonColor);
                 document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
 
                 manualRuleButton.onclick = function() {
@@ -35,15 +35,15 @@ function addManualRuleButton() {
                         headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
                         body: new URLSearchParams({
                             'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                            'process_id': buttonConfig.process_id,
+                            'process_id': buttonConfig.processId,
                         })
                     });
                     if (!response.ok) {
                         console.error('Didnt succeed!', response);
-                        PopupAnimateIN("1 item already being processed", true)
+                        popupAnimateIn("1 item already being processed", true)
                     } else {
                         console.log('Completed!', response);
-                        PopupAnimateIN("1 item queued for processing!", false)
+                        popupAnimateIn("1 item queued for processing!", false)
                     }
                 });
             }
@@ -65,25 +65,25 @@ function filterUserGroups(userGroup) {
 
 //popup function
 
-function PopupAnimateIN(msg, isError) {
+function popupAnimateIn(msg, isError) {
     if (isError) {
         var popup = document.getElementById("popup-id");
         popup.classList.add("show");
         popup.classList.remove("hide");
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
-        setTimeout(PopupAnimateOUT, 1500);
+        setTimeout(popupAnimateOut, 1500);
     } else {
         var popup = document.getElementById("popup-id");
         popup.classList.add("show");
         popup.classList.remove("hide");
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
-        setTimeout(PopupAnimateOUT, 1500);
+        setTimeout(popupAnimateOut, 1500);
     }
 }
 
-function PopupAnimateOUT() {
+function popupAnimateOut() {
     var popup = document.getElementById("popup-id");
     popup.classList.remove("show");
     popup.classList.add("hide");
