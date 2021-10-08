@@ -4,9 +4,9 @@ console.log(`bccm-customizations.js executing`)
 
 var filterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-var metadata_obj;
+var metadataObj;
 
-fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
+fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadataObj = data);
 
 //generates Button and adds EventListener
 
@@ -14,7 +14,7 @@ function addManualRuleButton() {
     for (var i = 0; i < filterdUserGroup.length; i++) {
         for (var x = 0; x < filterdUserGroup[i].buttons.length; x++) {
 
-            if(filterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name || filterdUserGroup[i].buttons[x].metadata == ""){
+            if(filterdUserGroup[i].buttons[x].metadata == metadataObj.group_name || filterdUserGroup[i].buttons[x].metadata == ""){
 
                 let buttonConfig = filterdUserGroup[i].buttons[x];
                 let manualRuleButton = document.createElement("button");
