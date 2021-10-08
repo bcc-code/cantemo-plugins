@@ -17,19 +17,19 @@ function addManualRuleButton() {
             if(FilterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name || FilterdUserGroup[i].buttons[x].metadata == ""){
 
                 let buttonConfig = FilterdUserGroup[i].buttons[x];
-                let ManualRuleButton = document.createElement("button");
-                ManualRuleButton.innerHTML = buttonConfig.label;
-                ManualRuleButton.type = "button";
-                ManualRuleButton.setAttribute("class", buttonConfig.button_color);
-                document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
+                let manualRuleButton = document.createElement("button");
+                manualRuleButton.innerHTML = buttonConfig.label;
+                manualRuleButton.type = "button";
+                manualRuleButton.setAttribute("class", buttonConfig.button_color);
+                document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
 
-                ManualRuleButton.onclick = function() {
+                manualRuleButton.onclick = function() {
                     this.innerHTML = "working..."
                     this.disabled = true;
                     let THIS = this;
                     setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
                 }
-                ManualRuleButton.addEventListener('click', async _ => {
+                manualRuleButton.addEventListener('click', async _ => {
                     const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
                         headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
