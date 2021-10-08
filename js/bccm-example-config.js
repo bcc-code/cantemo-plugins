@@ -1,4 +1,4 @@
-import colour from '/sitemedia/js/bccm-colours.js';
+import color from '/sitemedia/js/bccm-colors.js';
 import group from '/sitemedia/js/bccm-groups.js';
 import metadata from '/sitemedia/js/bccm-metadata.js';
 
@@ -11,13 +11,13 @@ export default {
                     {
                         label: `Send to BMM`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.green,
+                        button_color: color.green,
                         metadata: metadata.film
                     },
                     {
                         label: `test1`,
                         processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.yellow,
+                        button_color: color.yellow,
                         metadata: metadata.melga
                     }
                 ]
@@ -28,7 +28,7 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.blue,
+                        button_color: color.blue,
                         metadata: metadata.milga
                     }
                 ]
@@ -39,49 +39,49 @@ export default {
                     {
                         label: `Send to BrunstadTV`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.orange,
+                        button_color: color.orange,
                         metadata: metadata.molga
                     },
                     {
                         label: `molestie leo`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.red,
+                        button_color: color.red,
                         metadata: metadata.test
                     },
                     {
                         label: `imperdiet eget`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.turquoise,
+                        button_color: color.turquoise,
                         metadata: metadata.film
                     },
                     {
                         label: `neque laoreet`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.pink,
+                        button_color: color.pink,
                         metadata: metadata.melga
                     },
                     {
                         label: `Vivamus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.blue,
+                        button_color: color.blue,
                         metadata: metadata.milga
                     },
                     {
                         label: `maximus eu`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.lila,
+                        button_color: color.lila,
                         metadata: metadata.molga
                     },
                     {
                         label: `tellus sed`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.cyan,
+                        button_color: color.cyan,
                         metadata: metadata.test
                     },
                     {
                         label: `porta tellus`,
                         process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
-                        button_colour: colour.flamingo,
+                        button_color: color.flamingo,
                         metadata: metadata.film
                     }
                 ]

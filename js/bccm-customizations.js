@@ -20,7 +20,7 @@ function addManualRuleButton() {
                 let ManualRuleButton = document.createElement("button");
                 ManualRuleButton.innerHTML = buttonConfig.label;
                 ManualRuleButton.type = "button";
-                ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
+                ManualRuleButton.setAttribute("class", buttonConfig.button_color);
                 document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
 
                 ManualRuleButton.onclick = function() {
