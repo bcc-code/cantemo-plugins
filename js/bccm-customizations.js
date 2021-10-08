@@ -23,12 +23,22 @@ function addManualRuleButton() {
                 manualRuleButton.setAttribute("class", buttonConfig.buttonColor);
                 document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
 
-                manualRuleButton.onclick = function() {
-                    this.innerHTML = "working..."
-                    this.disabled = true;
-                    let THIS = this;
-                    setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
+                // manualRuleButton.onclick = function() {
+                //     this.innerHTML = "working..."
+                //     this.disabled = true;
+                //     let THIS = this;
+                //     setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
+                // }
+                let THIS = this;
+
+                function buttonMsg(msg) {
+                    THIS.innerHTML = msg;
+                    THIS.disabled = true;
+                    setTimeout(function(){THIS.disabled = false; THIS.innerHTML = buttonConfig.label;}, 5000);
                 }
+                    
+
+
                 manualRuleButton.addEventListener('click', async _ => {
                     const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
@@ -60,8 +70,6 @@ function filterUserGroups(userGroup) {
         }
     } 
 }
-
-
 
 //popup function
 
