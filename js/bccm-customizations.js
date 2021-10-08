@@ -31,7 +31,11 @@ function addManualRuleButton() {
                 // }
                 let THIS = this;
 
-
+                function buttonMsg(msg) {
+                    THIS.innerHTML = msg;
+                    THIS.disabled = true;
+                    setTimeout(function(){THIS.disabled = false; THIS.innerHTML = buttonConfig.label;}, 5000);
+                }
                     
 
 
@@ -67,13 +71,6 @@ function filterUserGroups(userGroup) {
             return true
         }
     } 
-}
-
-function buttonMsg(msg) {
-    THIS.innerHTML = msg;
-    THIS.disabled = true;
-    let THIS = this;
-    setTimeout(function(){THIS.disabled = false; THIS.innerHTML = buttonConfig.label;}, 5000);
 }
 
 //popup function
