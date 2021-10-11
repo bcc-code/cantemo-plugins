@@ -20,7 +20,7 @@ function addManualRuleButton() {
                 let manualRuleButton = document.createElement("button");
                 manualRuleButton.innerHTML = buttonConfig.label;
                 manualRuleButton.type = "button";
-                manualRuleButton.setAttribute("class", buttonConfig.buttonColor);
+                manualRuleButton.setAttribute("class", buttonConfig.button_colour);
                 document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
 
                 manualRuleButton.onclick = function() {
@@ -35,7 +35,7 @@ function addManualRuleButton() {
                         headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
                         body: new URLSearchParams({
                             'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]")[0].value,
-                            'process_id': buttonConfig.processId,
+                            'process_id': buttonConfig.process_id,
                         })
                     });
                     if (!response.ok) {

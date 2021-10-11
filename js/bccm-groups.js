@@ -1,4 +1,4 @@
 export default { 
     admin: "Admin",
-    specialAll: "_special_all",
+    special_all: "_special_all",
 };
