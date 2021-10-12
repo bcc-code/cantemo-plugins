@@ -10,13 +10,13 @@ export default {
                 buttons: [
                     {
                         label: `Send to BMM`,
-                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.green,
                         metadata: ""
                     },
                     {
                         label: `test1`,
-                        processId: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
+                        process_id: `process_f50625b5-0c30-4364-b26e-4ec0f01db436`,
                         button_colour: colour.yellow,
                         metadata: metadata.melga
                     }

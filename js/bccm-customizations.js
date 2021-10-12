@@ -2,34 +2,34 @@ import config from '/sitemedia/js/bccm-config.js';
 
 console.log(`bccm-customizations.js executing`) 
 
-var FilterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
+var filterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
-var metadata_obj;
+var metadataObj;
 
-fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadata_obj = data);
+fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(res => res.json()).then(data => metadataObj = data);
 
 //generates Button and adds EventListener
 
 function addManualRuleButton() {
-    for (var i = 0; i < FilterdUserGroup.length; i++) {
-        for (var x = 0; x < FilterdUserGroup[i].buttons.length; x++) {
+    for (var i = 0; i < filterdUserGroup.length; i++) {
+        for (var x = 0; x < filterdUserGroup[i].buttons.length; x++) {
 
-            if(FilterdUserGroup[i].buttons[x].metadata == metadata_obj.group_name || FilterdUserGroup[i].buttons[x].metadata == ""){
+            if(filterdUserGroup[i].buttons[x].metadata == metadataObj.group_name || filterdUserGroup[i].buttons[x].metadata == ""){
 
-                let buttonConfig = FilterdUserGroup[i].buttons[x];
-                let ManualRuleButton = document.createElement("button");
-                ManualRuleButton.innerHTML = buttonConfig.label;
-                ManualRuleButton.type = "button";
-                ManualRuleButton.setAttribute("class", buttonConfig.button_colour);
-                document.getElementById("ManualRuleButtonDIV").appendChild(ManualRuleButton); 
+                let buttonConfig = filterdUserGroup[i].buttons[x];
+                let manualRuleButton = document.createElement("button");
+                manualRuleButton.innerHTML = buttonConfig.label;
+                manualRuleButton.type = "button";
+                manualRuleButton.setAttribute("class", buttonConfig.button_colour);
+                document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
 
-                ManualRuleButton.onclick = function() {
+                manualRuleButton.onclick = function() {
                     this.innerHTML = "working..."
                     this.disabled = true;
                     let THIS = this;
                     setTimeout(function(){THIS.disabled = false;THIS.innerHTML = buttonConfig.label;}, 5000);
                 }
-                ManualRuleButton.addEventListener('click', async _ => {
+                manualRuleButton.addEventListener('click', async _ => {
                     const response = await fetch('/rulesengine3/start_process/?selected_objects=' + manualRulePluginContext.item_id, {
                         method: 'POST',
                         headers: {'Accept': 'application/json, text/javascript, */*; q=0.01'},
@@ -40,10 +40,10 @@ function addManualRuleButton() {
                     });
                     if (!response.ok) {
                         console.error('Didnt succeed!', response);
-                        PopupAnimateIN("1 item already being processed", true)
+                        popupAnimateIn("1 item already being processed", true)
                     } else {
                         console.log('Completed!', response);
-                        PopupAnimateIN("1 item queued for processing!", false)
+                        popupAnimateIn("1 item queued for processing!", false)
                     }
                 });
             }
@@ -65,57 +65,51 @@ function filterUserGroups(userGroup) {
 
 //popup function
 
-function PopupAnimateIN(msg, isError) {
+function popupAnimateIn(msg, isError) {
     if (isError) {
         var popup = document.getElementById("popup-id");
         popup.classList.add("show");
-        popup.classList.remove("remove");
-        setTimeout(PopupAnimateOUT, 1500);
+        popup.classList.remove("hide");
         popup.innerHTML = msg;
         popup.style.color = "#e64040"
+        setTimeout(popupAnimateOut, 1500);
     } else {
         var popup = document.getElementById("popup-id");
         popup.classList.add("show");
-        popup.classList.remove("remove");
-        setTimeout(PopupAnimateOUT, 1500);
+        popup.classList.remove("hide");
         popup.innerHTML = msg;
         popup.style.color = "#38cf45"
+        setTimeout(popupAnimateOut, 1500);
     }
 }
 
-function PopupAnimateOUT() {
+function popupAnimateOut() {
     var popup = document.getElementById("popup-id");
     popup.classList.remove("show");
-    popup.classList.add("remove");
+    popup.classList.add("hide");
 }
 
-// // Select the node that will be observed for mutations
-// const targetNode = document.getElementById('dropzone-wrapper');
+function waitForElm(selector, callback) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
 
-// // Options for the observer (which mutations to observe)
-// const config2 = { attributes: true, childList: true, subtree: true };
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                resolve(document.querySelector(selector));
+                observer.disconnect();
+                callback();
+            }
+        });
 
-// // Callback function to execute when mutations are observed
-// const callback = function(mutationsList, observer) {
-//     // Use traditional 'for loops' for IE 11
-//     for(const mutation of mutationsList) {
-//         if (mutation.type === 'childList') {
-//             console.log('A child node has been added or removed.');
-//         }
-//         else if (mutation.type === 'attributes') {
-//             console.log('The ' + mutation.attributeName + ' attribute was modified.');
-//         }
-//     }
-// };
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
 
-// // Create an observer instance linked to the callback function
-// const observer = new MutationObserver(callback);
-
-// // Start observing the target node for configured mutations
-// observer.observe(targetNode, config2);
-
-// // Later, you can stop observing
-// observer.disconnect();
-
-
-setTimeout(addManualRuleButton, 3000);
+waitForElm('#ManualRuleButtonDIV', function(){
+    addManualRuleButton();
+});
