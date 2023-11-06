@@ -1,6 +1,6 @@
 import config from '/sitemedia/js/bccm-config.js';
 
-console.log(`bccm-customizations.js executing`) 
+console.log(`bccm-customizations.js executing`)
 
 var filterdUserGroup = config.ruleButtonPlugin.userGroups.filter(filterUserGroups);
 
@@ -11,6 +11,18 @@ fetch('/API/v2/items/' + manualRulePluginContext.item_id + '/metadata/').then(re
 //generates Button and adds EventListener
 
 function addManualRuleButton() {
+
+	if (manualRulePluginContext.user_groups.includes("Admin")) {
+		let manualRuleButton = document.createElement("button");
+		manualRuleButton.innerHTML = "Temportal Export";
+		manualRuleButton.type = "button";
+		manualRuleButton.setAttribute("class", "green");
+		document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton);
+		manualRuleButton.onclick = function() {
+			window.open('https://export.lan.bcc.media/vx-export?id=' + manualRulePluginContext.item_id, '_blank');
+		}
+	}
+
     for (var i = 0; i < filterdUserGroup.length; i++) {
         for (var x = 0; x < filterdUserGroup[i].buttons.length; x++) {
 
@@ -21,7 +33,7 @@ function addManualRuleButton() {
                 manualRuleButton.innerHTML = buttonConfig.label;
                 manualRuleButton.type = "button";
                 manualRuleButton.setAttribute("class", buttonConfig.button_colour);
-                document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton); 
+                document.getElementById("ManualRuleButtonDIV").appendChild(manualRuleButton);
 
                 manualRuleButton.onclick = function() {
                     this.innerHTML = "working..."
@@ -47,7 +59,7 @@ function addManualRuleButton() {
                     }
                 });
             }
-        } 
+        }
     }
 }
 
@@ -58,7 +70,7 @@ function filterUserGroups(userGroup) {
         if (userGroup.name == manualRulePluginContext.user_groups[i] ) {
             return true
         }
-    } 
+    }
 }
 
 
