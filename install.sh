@@ -2,7 +2,7 @@
 set -o pipefail
 
 PORTAL_ROOT="/opt/cantemo/portal"
-PLUGIN_NAME="ManualRuleButtonPlugin"
+PLUGIN_NAME="IFramePlugin"
 
 if [ $(id -u) -ne 0 ]
   then echo "Please run as root"

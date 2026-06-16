@@ -11,7 +11,7 @@ https://tools.bcc.media/cantemo/?id=VX-2
 ## Changing the target URL
 
 Edit the `src` of the iframe in
-[`templates/manual_rule_button_plugin.html`](templates/manual_rule_button_plugin.html).
+[`templates/iframe_plugin.html`](templates/iframe_plugin.html).
 `{{ item_id }}` is the Cantemo item id (e.g. `VX-2`) supplied by the plugin
 context.
 
