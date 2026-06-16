@@ -1,35 +1,37 @@
+# Cantemo iframe plugin
 
-# TODO:
-- ✅ Create buttons with javascript 
-- ✅ Get user role from cantemo
-- ✅ Get item id from cantemo
-- ✅ Create a startManualRule function which takes a process_id 
-- ✅ Create buttons based on config file.
-- ✅ Clean up names (no myplugin)
--[ ]
-<br/>
+This Cantemo plugin embeds an external tool as an `<iframe>` in the media item
+view. It hooks into `MediaViewItemTechMetadataTop` and renders the iframe with
+the current item's ID appended as a query parameter, e.g.:
 
-## METADATA
-- ✅ generate different buttons depending on item type (maby through metadat, different itemtypes have different metadata)
+```
+https://tools.bcc.media/cantemo/?id=VX-2
+```
 
-<br/>
+## Changing the target URL
 
-## BUGS
-- when portal window is in mobile view you can´t click the buttons
+Edit the `src` of the iframe in
+[`templates/manual_rule_button_plugin.html`](templates/manual_rule_button_plugin.html).
+`{{ item_id }}` is the Cantemo item id (e.g. `VX-2`) supplied by the plugin
+context.
 
-<br/>
+## Install
+
+Run `install.sh` as root on the Cantemo host. It copies the plugin into
+`/opt/cantemo/portal/portal/plugins/`, runs `syncdata`, and restarts portal.
 
 ## The args object
 
-The args object on `IPluginBlock.return_str`.
+The `args` object on `IPluginBlock.return_string` (hook
+`MediaViewItemTechMetadataTop`):
 
 ```json
-[ // This is a tuple
+[
     [
         "pluginblock",
         "MediaViewItemTechMetadataTop"
     ],
-    { // This is a dict
+    {
         "item": "<<non-serializable: VSItem>>",
         "user": "<<non-serializable: SimpleLazyObject>>",
         "request": "<<non-serializable: Request>>",
@@ -44,5 +46,3 @@ The args object on `IPluginBlock.return_str`.
     }
 ]
 ```
-
-User groups: {{user_groups}}

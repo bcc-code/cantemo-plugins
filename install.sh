@@ -1,9 +1,7 @@
 #!/bin/bash
 set -o pipefail
 
-# path to config file that you wnat to use
 PORTAL_ROOT="/opt/cantemo/portal"
-CONFIG_FILE="$PORTAL_ROOT/portal_media/js/bccm-config.js"
 PLUGIN_NAME="ManualRuleButtonPlugin"
 
 if [ $(id -u) -ne 0 ]
@@ -20,14 +18,6 @@ fi
 
 mkdir -pv $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
 cp -rv $DIR/* $PORTAL_ROOT/portal/plugins/$PLUGIN_NAME
-cp -rv $DIR/js/* $PORTAL_ROOT/portal_media/js/
-
-if [ -f "$CONFIG_FILE" ]; then
-    echo "$CONFIG_FILE exists."
-else 
-    echo "$CONFIG_FILE does not exist."
-    cp -v $DIR/js/bccm-example-config.js $CONFIG_FILE
-fi
 
 echo "Done."
 
